@@ -6,8 +6,7 @@ export default class AppHeader extends Component {
         return (   
             <Header as='h2'>
                 <Image src={Logo} size='small' style={{"width": '100px', "height": "auto" }} />
-            </Header>
-            
+            </Header>   
         )
     }
 }
