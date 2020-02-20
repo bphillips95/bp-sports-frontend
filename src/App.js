@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import './App.css';
-// import MyComponent from './components/Writing'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import TextEditor from './components/TextEditor'
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from './components/Home'
-import {initializeArticles} from './actions/action'
+import {initializeArticles, saveUserToState} from './actions/action'
 import {connect} from 'react-redux'
 import ArticleContainer from './containers/ArticleContainer';
+import Article from './components/Article'
+import Login from './components/Login'
+import Register from './components/Register'
 
 
 class App extends Component {
@@ -17,15 +20,20 @@ class App extends Component {
       this.props.initializeArticles(articles)
     })
   }
+
   render() {
   return (
       <Router>
         <Switch>
+        <Route exact path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
+        <Route exact path="/articles/:id" component={Article}  />
+        <Route exact path="/write" render={routerProps => <TextEditor {...routerProps} />} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
         <Route path="/" component={Home} />
-        <Route path="/articles" component={ArticleContainer} />
         </Switch>
-      </Router>
+       </Router>
   );
 }
 }
-export default connect(null, {initializeArticles})(App);
+export default connect(null, {initializeArticles, saveUserToState})(App);

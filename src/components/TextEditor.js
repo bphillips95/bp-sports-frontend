@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import 'react-quill/dist/quill.bubble.css';
 
-class RichTextEditor extends Component {
+class TextEditor extends Component {
 	constructor(props) {
 		super(props);
 
@@ -36,9 +36,9 @@ class RichTextEditor extends Component {
 	}
 
 	rteChange = (content, delta, source, editor) => {
-		console.log(editor.getHTML()); // rich text
-		console.log(editor.getText()); // plain text
-		console.log(editor.getLength()); // number of characters
+		// console.log(editor.getHTML()); // rich text
+		// console.log(editor.getText()); // plain text
+		// console.log(editor.getLength()); // number of characters
 	}
 
 	render() {
@@ -53,4 +53,4 @@ class RichTextEditor extends Component {
 
 }
 
-export default RichTextEditor;
+export default TextEditor;

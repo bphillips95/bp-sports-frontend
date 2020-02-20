@@ -3,9 +3,13 @@ import {connect} from 'react-redux'
 import ListArticles from '../components/ListArticles'
 class ArticleContainer extends Component {
     render() {
+       const listArticles = this.props.articles.map(article => <ListArticles article={article} key={article.id} />)
         return (
             <div>
-                {this.props.articles.map(article => <ListArticles article={article} key={article.id} />)}
+                    {listArticles}
+                    {/* <Route
+                     path={`articles/:id`} 
+                     render={routerProps => <Article {...routerProps} articles={this.props.articles} />}/> */}
             </div>
         )
     }
