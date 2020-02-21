@@ -4,11 +4,19 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
-import {createStore} from 'redux'
+import {createStore,combineReducers} from 'redux'
 import articleReducer from './reducers/articleReducer';
+import userReducer from './reducers/userReducer';
 import AppHeader from './components/AppHeader'
 
-const store = createStore( articleReducer,
+const rootReducer = combineReducers(
+        {
+          articles: articleReducer,
+          userInfo: userReducer
+        }
+      )
+
+const store = createStore( rootReducer,
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )
 
 ReactDOM.render(

@@ -8,7 +8,7 @@ class Article extends Component {
         // console.log(this.props.match.params.id)
         // console.log(this.props.articles.all)
         // forced equation bc params id is a string
-        let foundArticle = this.props.articles.all.find(obj => obj.id == this.props.match.params.id)
+        let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
        console.log(foundArticle)
 
        if (foundArticle) {
