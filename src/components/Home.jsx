@@ -6,7 +6,7 @@ export default class Home extends Component {
         return (
             <div>
                 <ArticleContainer/>
-              <ul color= '#00FFFF'> Home Page  </ul> 
+              {/* <ul color= '#00FFFF'> Home Page  </ul>  */}
               </div>
         )
     }
