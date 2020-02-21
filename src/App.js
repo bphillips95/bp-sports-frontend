@@ -20,6 +20,9 @@ class App extends Component {
       this.props.initializeArticles(articles)
     })
   }
+  handleRegister = (userInfo) => { 
+    console.log(userInfo)
+  }
 
   render() {
   return (
