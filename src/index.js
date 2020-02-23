@@ -8,7 +8,7 @@ import {createStore,combineReducers} from 'redux'
 import articleReducer from './reducers/articleReducer';
 import userReducer from './reducers/userReducer';
 import AppHeader from './components/AppHeader'
-
+import { BrowserRouter as Router} from "react-router-dom";
 const rootReducer = combineReducers(
         {
           articles: articleReducer,
@@ -21,8 +21,10 @@ const store = createStore( rootReducer,
 
 ReactDOM.render(
                 <Provider store={store}>
+                <Router>
                 <AppHeader/>
                 <App />
+                </Router>
                 </Provider>,
         document.getElementById('root'));
 

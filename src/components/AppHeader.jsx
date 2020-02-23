@@ -25,7 +25,7 @@ class AppHeader extends Component {
                 <Image src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
                  />
                 </Menu.Item>
-                {/* <Link to="/register" > */}
+                {/* <Link to="/register" ></Link> */}
                  <Menu.Item
           name='sign_up'
         >Sign Up

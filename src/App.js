@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import TextEditor from './components/TextEditor'
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import Home from './components/Home'
 import {initializeArticles, saveUserToState} from './actions/action'
 import {connect} from 'react-redux'
@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
   return (
-      <Router>
+      // <Router>
         <Switch>
         <Route exact path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
         <Route exact path="/articles/:id" component={Article}  />
@@ -35,7 +35,7 @@ class App extends Component {
         <Route path="/register" component={Register} />
         <Route path="/" component={Home} />
         </Switch>
-       </Router>
+      //  </Router>
   );
 }
 }

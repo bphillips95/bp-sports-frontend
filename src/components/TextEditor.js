@@ -4,10 +4,8 @@ import 'react-quill/dist/quill.snow.css';
 import 'react-quill/dist/quill.bubble.css';
 
 class TextEditor extends Component {
-	constructor(props) {
-		super(props);
 
-		this.modules = {
+		modules = {
 			toolbar: [
 		      [{ 'font': [] }],
 		      [{ 'size': ['small', false, 'large', 'huge'] }],
@@ -19,7 +17,7 @@ class TextEditor extends Component {
 		    ]
 		};
 
-		this.formats = [
+		formats = [
 		    'font',
 		    'size',
 		    'bold', 'italic', 'underline',
@@ -28,25 +26,34 @@ class TextEditor extends Component {
 		    'color', 'background'
 	  	];
 
-	  	this.state = {
-			comments: ''
+	  	state = {
+			content: ''
 		}
-
-		this.rteChange = this.rteChange.bind(this);
-	}
 
 	rteChange = (content, delta, source, editor) => {
 		// console.log(editor.getHTML()); // rich text
 		// console.log(editor.getText()); // plain text
 		// console.log(editor.getLength()); // number of characters
+		// console.log(editor.getContents()) // gets delta
+		this.setState({
+			content: editor.getHTML()
+		})
 	}
+	// run post fetch with title, content and writer
+	handleSubmit = () => {
+		console.log(this.state)
+	}
+	
 
 	render() {
 	    return (
-	      <div>
+	      <div >
+			  {/* <input type="text"> Title Here </input>  */}
 	        <ReactQuill theme="snow"  modules={this.modules}
 				formats={this.formats} onChange={this.rteChange}
-			value={this.state.comments || ''} placeholder = 'Write Here'/> 
+			value={this.state.content || ''} placeholder = 'Write Here' /> 
+			<button onClick={this.handleSubmit} type="submit" >Submit</button>
+			
 	      </div>
 	    );
 	}
