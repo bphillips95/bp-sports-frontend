@@ -6,13 +6,19 @@ import {Link } from 'react-router-dom'
 
 class Article extends Component {
 
-    // handleEditClick = (evt) => {
-    //     // console.log(evt.target.value) // value is the article id
-    //     let articleToEdit = this.props.articles.articles.all.find(obj => obj.id == evt.target.value)
-    //     console.log(articleToEdit)
-    //     // <Link article={articleToEdit}> </Link> 
-    //     //  send this
-    // }
+    handleDeleteClick = (evt) => {
+        // console.log(evt.target.value) // value is the article id
+        let id = parseInt(evt.target.value)
+        // console.log(id)
+        // let articleToDelete = this.props.articles.articles.all.find(obj => obj.id == evt.target.value)
+        // console.log(articleToDelete)
+        fetch(`http://localhost:3000/articles/${id}`, {
+            method: "DELETE",
+            headers: { 
+                "Content-Type": "application/json"
+            }
+        }).then(console.log)
+    }
     render() {
         // find the if of line 8 in line 9 
         // console.log(this.props.match.params.id)
@@ -35,7 +41,7 @@ class Article extends Component {
             {foundArticle.content}
             </p>
            <Link to={`/articles/${foundArticle.id}/edit`}  >Edit Article </Link> 
-            {/* <button value={foundArticle.id} onClick={this.handleEditClick}>Edit Article</button> */}
+            <button value={foundArticle.id} onClick={this.handleDeleteClick}>Delete Article</button>
             </Container>
         ) }
         else { 

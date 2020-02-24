@@ -77,7 +77,7 @@ class EditArticle extends Component {
         console.log(this.state)
         let id = this.state.id
         // console.log(typeof(id)) is a number
-        evt.preventDefault()
+        // evt.preventDefault()
         // PATCH to only send some new info ie. title and content without changing writer
 		fetch(`http://localhost:3000/articles/${id}`, {
 			method: "PATCH", 
