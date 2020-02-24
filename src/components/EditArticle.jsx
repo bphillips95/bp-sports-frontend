@@ -29,7 +29,8 @@ class EditArticle extends Component {
     
 	  	state = {
 			title: '',
-			content: ''
+            content: '',
+            id: 0
         }  
     
 
@@ -54,7 +55,8 @@ class EditArticle extends Component {
         if (foundArticle) {  
         this.setState({
             title: foundArticle.title,
-            content: foundArticle.content
+            content: foundArticle.content,
+            id : foundArticle.id
         })
         }
     }
@@ -63,12 +65,33 @@ class EditArticle extends Component {
         if(prevProps.articles.articles.all.length === 0){
             // console.log(this.props.articles.articles)
             let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
+            console.log(foundArticle)
             this.setState({
                 title: foundArticle.title,
-                content: foundArticle.content
+                content: foundArticle.content,
+                id : foundArticle.id
             })
         }
     }
+    handleEdit = (evt) => {
+        console.log(this.state)
+        let id = this.state.id
+        // console.log(typeof(id)) is a number
+        evt.preventDefault()
+        // PATCH to only send some new info ie. title and content without changing writer
+		fetch(`http://localhost:3000/articles/${id}`, {
+			method: "PATCH", 
+			headers: { 
+				"Content-Type": "application/json"
+			}, 
+			body: JSON.stringify({
+                article: {
+				title: this.state.title,
+                content: this.state.content
+             }
+			})
+        }).then(console.log)
+	}
 
     handleRender = () => {
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
@@ -82,7 +105,7 @@ class EditArticle extends Component {
 	        <ReactQuill theme="snow"  modules={this.modules}
 				formats={this.formats} onChange={this.rteChange}
 			value={this.state.content || ''} placeholder = 'Write Here' name="content"/> 
-			<button onClick={this.handleSubmit} type="submit" >Submit</button>
+			<button onClick={this.handleEdit} type="submit" >Submit Edit</button>
 			
 	      </div>
         }
