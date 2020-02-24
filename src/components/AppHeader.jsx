@@ -7,20 +7,8 @@ import {connect} from 'react-redux'
 class AppHeader extends Component {
    
     render() {
-        // if(this.props.user.userInfo.user) {
-        // console.log(this.props.user.userInfo.user.username)
-        // }
-      
-//             <div class="ui menu">
-//   <a class="item">Editorials</a>
-//   <a class="item">Reviews</a>
-//   <a class="item">Upcoming Events</a>
-// </div>
-            // <Header as='h2'>
-            //     <Image src={Logo} size='small' style={{"width": '100px', "height": "auto" }} />
-            // </Header>  
             return (    
-            <Menu> <Link to="/">
+            <Menu tabular> <Link to="/">
                 <Menu.Item >
                 <Image  src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
                  />
@@ -40,19 +28,16 @@ class AppHeader extends Component {
           </Link>
           <Link to="/write" >
           <Menu.Item>
-              {/* {localStorage.token ? "Become a writer" : null} */}
                 Write an article
           </Menu.Item>
           </Link>
           <Link to="/createwriter" >
           <Menu.Item>
-              {/* {localStorage.token ? "Become a writer" : null} */}
                 Create Writer
           </Menu.Item>
           </Link>
           <Link to="/selectwriter" >
           <Menu.Item>
-              {/* {localStorage.token ? "Become a writer" : null} */}
                 Select Writer
           </Menu.Item>
           </Link>

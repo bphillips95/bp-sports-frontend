@@ -12,7 +12,7 @@ import Register from './components/Register'
 import CreateWriter from './components/CreateWriter'
 import SelectWriter from './components/SelectWriter'
 import EditArticle from './components/EditArticle';
-
+import Semantic from './components/Semantic'
 class App extends Component {
 
   componentDidMount()  { 
@@ -20,7 +20,18 @@ class App extends Component {
     .then(r => r.json())
     .then(articles => { 
       this.props.initializeArticles(articles)
+    }) 
+    if(localStorage.getItem("token")) {
+      let token = localStorage.getItem("token")
+    fetch("http://localhost:3000/api/v1/persist", { 
+      headers: {
+        "Authorization": `bearer ${token}`
+      }
+    }).then(r => r.json())
+    .then(user => { 
+      this.props.saveUserToState(user)
     })
+    }
   }
   handleRegister = (userInfo) => { 
     console.log(userInfo)
@@ -38,6 +49,7 @@ class App extends Component {
         <Route path="/register" component={Register} />
         <Route path="/createwriter" component={CreateWriter} />
         <Route path="/selectwriter" component={SelectWriter} />
+        <Route path="/semantic" component={Semantic} />
         <Route path="/" component={Home} />
         </Switch>
       //  </Router>

@@ -23,14 +23,15 @@ class Login extends Component {
             },
             body:JSON.stringify(
                 { 
-                  user: {
+                //   user: {
                       username: this.state.username,
                       password: this.state.password
-                  }  
+                //   }  
                 } )
         })
         .then(r => r.json())
         .then(resp => { 
+            console.log(resp)
             if(resp.jwt) {
             localStorage.setItem("token", resp.jwt)
             localStorage.setItem("user", resp.user.username)

@@ -7,7 +7,7 @@ export default class Home extends Component {
             <div>
                 <ArticleContainer/>
                 <br></br>
-              {localStorage.toker ? `Welcome ${localStorage.user}` : "Please log in"} 
+              {/* {localStorage.toker ? `Welcome ${localStorage.user}` : "Please log in"}  */}
               </div>
         )
     }

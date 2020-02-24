@@ -19,7 +19,7 @@ export default class ListArticles extends Component {
       <Item.Image src={MlbLogo} size='tiny' />
 
       <Item.Content>
-      <Link key={id} to={`/articles/${id}`} > <Item.Header as='a'>{title}</Item.Header></Link>
+      <Link key={id} to={`/articles/${id}`} > <Item.Header>{title}</Item.Header></Link>
        
         <Item.Meta>Description</Item.Meta>
         <Item.Description>
