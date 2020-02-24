@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 import { Container, Header } from 'semantic-ui-react'
 import {connect} from 'react-redux'
+import EditArticle from './EditArticle'
+import {Link } from 'react-router-dom'
 
 class Article extends Component {
+
+    // handleEditClick = (evt) => {
+    //     // console.log(evt.target.value) // value is the article id
+    //     let articleToEdit = this.props.articles.articles.all.find(obj => obj.id == evt.target.value)
+    //     console.log(articleToEdit)
+    //     // <Link article={articleToEdit}> </Link> 
+    //     //  send this
+    // }
     render() {
         // find the if of line 8 in line 9 
         // console.log(this.props.match.params.id)
@@ -10,6 +20,8 @@ class Article extends Component {
         // forced equation bc params id is a string
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
        console.log(foundArticle)
+
+       
 
        if (foundArticle) {
         return (
@@ -22,6 +34,8 @@ class Article extends Component {
             <p>
             {foundArticle.content}
             </p>
+           <Link to={`/articles/${foundArticle.id}/edit`}  >Edit Article </Link> 
+            {/* <button value={foundArticle.id} onClick={this.handleEditClick}>Edit Article</button> */}
             </Container>
         ) }
         else { 

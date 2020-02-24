@@ -11,6 +11,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import CreateWriter from './components/CreateWriter'
 import SelectWriter from './components/SelectWriter'
+import EditArticle from './components/EditArticle';
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
         <Route exact path="/articles/:id" component={Article}  />
+        <Route exact path="/articles/:id/edit" component={EditArticle}  />
         <Route exact path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
