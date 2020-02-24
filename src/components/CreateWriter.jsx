@@ -18,13 +18,14 @@ export default class CreateWriter extends Component {
         fetch("http://localhost:3000/writers", { 
             method: "POST", 
             headers: {
-                "Content-Type":"application/json"
-                
+                "Content-Type":"application/json",
+                "Accept": "application/json"
             },
             body: JSON.stringify({
                 writer:{
                 first_name: this.state.first_name,
-                last_name: this.state.last_name }
+                last_name: this.state.last_name 
+                }
             })
         }).then(r => r.json())
         .then(writer => { 

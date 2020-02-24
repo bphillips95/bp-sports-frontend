@@ -20,28 +20,44 @@ class AppHeader extends Component {
             //     <Image src={Logo} size='small' style={{"width": '100px', "height": "auto" }} />
             // </Header>  
             return (    
-            <Menu>
+            <Menu> <Link to="/">
                 <Menu.Item >
                 <Image  src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
                  />
                 </Menu.Item>
-                {/* <Link to="/register" ></Link> */}
-                 <Menu.Item
+                </Link>
+                <Link to="register">
+                 <Menu.Item 
           name='sign_up'
         >Sign Up
             </Menu.Item>
-            {/* </Link>  */}
+            </Link> 
+            <Link to="/login">
             <Menu.Item
           name='login'
-        //   active={activeItem === 'login'}
-          onClick={this.handleItemClick}
         > Log In
           </Menu.Item>
+          </Link>
+          <Link to="/write" >
+          <Menu.Item>
+              {/* {localStorage.token ? "Become a writer" : null} */}
+                Write an article
+          </Menu.Item>
+          </Link>
+          <Link to="/createwriter" >
+          <Menu.Item>
+              {/* {localStorage.token ? "Become a writer" : null} */}
+                Create Writer
+          </Menu.Item>
+          </Link>
+          <Link to="/selectwriter" >
+          <Menu.Item>
+              {/* {localStorage.token ? "Become a writer" : null} */}
+                Select Writer
+          </Menu.Item>
+          </Link>
           <Menu.Item>
               {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
-          </Menu.Item>
-          <Menu.Item>
-              {localStorage.token ? "Become a writer" : null}
           </Menu.Item>
                 </Menu>
 

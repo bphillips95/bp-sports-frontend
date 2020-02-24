@@ -27,6 +27,7 @@ class TextEditor extends Component {
 	  	];
 
 	  	state = {
+			title: '',
 			content: ''
 		}
 
@@ -39,19 +40,42 @@ class TextEditor extends Component {
 			content: editor.getHTML()
 		})
 	}
+	titleChange = (evt) => {
+		this.setState({
+			title: evt.target.value
+		})
+	}
+	
 	// run post fetch with title, content and writer
-	handleSubmit = () => {
+	handleSubmit = (evt) => {
 		console.log(this.state)
+		let writer_id = parseInt(localStorage.writer_id)
+		console.log(writer_id)
+		evt.preventDefault()
+		fetch("http://localhost:3000/articles", {
+			method: "POST", 
+			headers: { 
+				"Content-Type": "application/json"
+			}, 
+			body: JSON.stringify({
+				title: this.state.title,
+				content: this.state.content,
+				writer_id
+			})
+		}).then(console.log)
 	}
 	
 
 	render() {
 	    return (
 	      <div >
-			  {/* <input type="text"> Title Here </input>  */}
+			  <div>
+			  <input name="title" type="text" placeholder="Title Here"
+			   onChange={this.titleChange} value={this.state.title}></input>
+			  </div>
 	        <ReactQuill theme="snow"  modules={this.modules}
 				formats={this.formats} onChange={this.rteChange}
-			value={this.state.content || ''} placeholder = 'Write Here' /> 
+			value={this.state.content || ''} placeholder = 'Write Here' name="content"/> 
 			<button onClick={this.handleSubmit} type="submit" >Submit</button>
 			
 	      </div>
