@@ -6,7 +6,8 @@ export default class Home extends Component {
         return (
             <div>
                 <ArticleContainer/>
-              {/* <ul color= '#00FFFF'> Home Page  </ul>  */}
+                <br></br>
+              {localStorage.toker ? `Welcome ${localStorage.user}` : "Please log in"} 
               </div>
         )
     }

@@ -9,7 +9,7 @@ import ArticleContainer from './containers/ArticleContainer';
 import Article from './components/Article'
 import Login from './components/Login'
 import Register from './components/Register'
-
+import CreateWriter from './components/CreateWriter'
 
 class App extends Component {
 
@@ -33,6 +33,7 @@ class App extends Component {
         <Route exact path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/createwriter" component={CreateWriter} />
         <Route path="/" component={Home} />
         </Switch>
       //  </Router>

@@ -22,7 +22,7 @@ class AppHeader extends Component {
             return (    
             <Menu>
                 <Menu.Item >
-                <Image src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
+                <Image  src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
                  />
                 </Menu.Item>
                 {/* <Link to="/register" ></Link> */}
@@ -39,6 +39,9 @@ class AppHeader extends Component {
           </Menu.Item>
           <Menu.Item>
               {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
+          </Menu.Item>
+          <Menu.Item>
+              {localStorage.token ? "Become a writer" : null}
           </Menu.Item>
                 </Menu>
 
