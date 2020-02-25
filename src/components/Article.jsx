@@ -37,9 +37,8 @@ class Article extends Component {
                 <h3>
                    By {foundArticle.writer.writer_name}
                 </h3>
-            <p>
-            {foundArticle.content}
-            </p>
+            <div dangerouslySetInnerHTML={{__html: foundArticle.content}}></div>
+           <br></br>
            <Link to={`/articles/${foundArticle.id}/edit`}  >Edit Article </Link> 
             <button value={foundArticle.id} onClick={this.handleDeleteClick}>Delete Article</button>
             </Container>

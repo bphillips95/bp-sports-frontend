@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import Logo from '../logo.jpeg'
-import {Image, Menu} from 'semantic-ui-react'
+import {Image, Menu, Button} from 'semantic-ui-react'
 import {Link } from 'react-router-dom'
 import {connect} from 'react-redux'
-
+import {logoutUser} from '../actions/action'
 class AppHeader extends Component {
    
+    logout = () => {
+        console.log(this.props.user)
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        this.props.logoutUser()
+        console.log(this.props.user)
+    }
     render() {
             return (    
             <Menu tabular> <Link to="/">
@@ -26,6 +33,10 @@ class AppHeader extends Component {
         > Log In
           </Menu.Item>
           </Link>
+                <Button onClick={this.logout}>
+                Log Out
+                </Button>
+
           <Link to="/write" >
           <Menu.Item>
                 Write an article
@@ -51,7 +62,7 @@ class AppHeader extends Component {
 }
 const mstp = (state) => {
     return { 
-        user: {...state}
+        user: {...state.userInfo}
     }
 }
-export default connect(mstp)(AppHeader)
+export default connect(mstp, {logoutUser})(AppHeader)

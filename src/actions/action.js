@@ -11,3 +11,11 @@ export const saveUserToState = userInfo => {
     payload: userInfo
   }
 }
+export const saveUpdatedArticle = (article) => ({
+  type: "SAVE_UPDATED_ARTICLE",
+  payload: article
+})
+export const logoutUser = () => ({
+  type: "LOG_OUT_USER"
+})
+

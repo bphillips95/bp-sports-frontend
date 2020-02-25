@@ -103,7 +103,7 @@ class EditArticle extends Component {
 			   onChange={this.titleChange} value={this.state.title}></input>
 			  </div>
 	        <ReactQuill theme="snow"  modules={this.modules}
-				formats={this.formats} onChange={this.rteChange}
+				formats={this.formats} onChange={this.rteChange} 
 			value={this.state.content || ''} placeholder = 'Write Here' name="content"/> 
 			<button onClick={this.handleEdit} type="submit" >Submit Edit</button>
 			

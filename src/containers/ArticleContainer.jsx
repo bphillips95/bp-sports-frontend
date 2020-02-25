@@ -7,7 +7,7 @@ class ArticleContainer extends Component {
        const listArticles = this.props.articles.map(article => <ListArticles article={article} key={article.id} />)
         return (
             <div>
-              Latest Headlines
+              <strong>Latest Headlines</strong>
                     {listArticles}
                     {/* <Route
                      path={`articles/:id`} 

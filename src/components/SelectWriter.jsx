@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import {Button} from 'semantic-ui-react'
 export default class SelectWriter extends Component {
 
     state = { 
@@ -23,8 +23,8 @@ export default class SelectWriter extends Component {
         if(this.state.writer) {
         return (
             <div>
-                {this.state.writer.map(writer => <li value={writer.id} key={writer.id}
-                onClick={this.handleClick}>{writer.first_name} {writer.last_name}</li>)}
+                {this.state.writer.map(writer => <Button value={writer.id} key={writer.id}
+                onClick={this.handleClick}>{writer.first_name} {writer.last_name}</Button>)}
             </div>
         )
         } else { 

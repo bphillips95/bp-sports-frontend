@@ -63,4 +63,4 @@ class Login extends Component {
     }
 }
 
-export default connect(null, saveUserToState)(Login)
+export default connect(null, {saveUserToState})(Login)

@@ -47,6 +47,7 @@ class App extends Component {
         <Route exact path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        {/* <Route path="/logout" component={Register} /> */}
         <Route path="/createwriter" component={CreateWriter} />
         <Route path="/selectwriter" component={SelectWriter} />
         <Route path="/semantic" component={Semantic} />
