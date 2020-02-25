@@ -36,24 +36,25 @@ class AppHeader extends Component {
                 Log Out
                 </Button> }  
                
-
-          <Link to="/write" >
+                {/* if redux user state for writer is true link to write */}
+          {/* <Link to="/write" >
           <Menu.Item>
                 Write an article
           </Menu.Item>
-          </Link>
-          <Link to="/createwriter" >
+          </Link> */}
+          {/* <Link to="/createwriter" >
           <Menu.Item>
                 Create Writer
           </Menu.Item>
-          </Link>
-          <Link to="/selectwriter" >
+          </Link> */}
+          {/* <Link to="/selectwriter" >
           <Menu.Item>
                 Select Writer
           </Menu.Item>
-          </Link>
+          </Link> */}
           <Menu.Item>
               {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
+              {localStorage.token ? <Link to="/profile" >Profile </Link> : null }
           </Menu.Item>
                 </Menu>
 

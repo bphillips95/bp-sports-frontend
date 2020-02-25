@@ -13,6 +13,7 @@ import CreateWriter from './components/CreateWriter'
 import SelectWriter from './components/SelectWriter'
 import EditArticle from './components/EditArticle';
 import Semantic from './components/Semantic'
+import Profile from './components/Profile'
 class App extends Component {
 
   componentDidMount()  { 
@@ -39,7 +40,6 @@ class App extends Component {
 
   render() {
   return (
-      // <Router>
         <Switch>
         <Route exact path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
         <Route exact path="/articles/:id" component={Article}  />
@@ -47,13 +47,12 @@ class App extends Component {
         <Route exact path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        {/* <Route path="/logout" component={Register} /> */}
+        <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />
         <Route path="/createwriter" component={CreateWriter} />
         <Route path="/selectwriter" component={SelectWriter} />
         <Route path="/semantic" component={Semantic} />
         <Route path="/" component={Home} />
         </Switch>
-      //  </Router>
   );
 }
 }

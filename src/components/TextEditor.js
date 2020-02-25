@@ -49,8 +49,7 @@ class TextEditor extends Component {
 	// run post fetch with title, content and writer
 	handleSubmit = (evt) => {
 		console.log(this.state)
-		let writer_id = parseInt(localStorage.writer_id)
-		console.log(writer_id)
+		
 		evt.preventDefault()
 		fetch("http://localhost:3000/articles", {
 			method: "POST", 
@@ -60,7 +59,7 @@ class TextEditor extends Component {
 			body: JSON.stringify({
 				title: this.state.title,
 				content: this.state.content,
-				writer_id
+				user_id: localStorage.user_id
 			})
 		}).then(console.log)
 	}
@@ -81,7 +80,10 @@ class TextEditor extends Component {
 	      </div>
 	    );
 	}
-
 }
+// const getUser = (state) => {
+// 	user: state.user
+// }
+
 
 export default TextEditor;
