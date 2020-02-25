@@ -27,15 +27,15 @@ class AppHeader extends Component {
         >Sign Up
             </Menu.Item>
             </Link> 
-            <Link to="/login">
+          {!localStorage.token ? <Link to="/login">
             <Menu.Item
           name='login'
         > Log In
           </Menu.Item>
-          </Link>
-                <Button onClick={this.logout}>
+          </Link> :  <Button onClick={this.logout}>
                 Log Out
-                </Button>
+                </Button> }  
+               
 
           <Link to="/write" >
           <Menu.Item>
