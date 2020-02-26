@@ -22,7 +22,7 @@ class AppHeader extends Component {
                  />
                 </Menu.Item>
                 </NavLink>
-                <NavLink to="register">
+                <NavLink to="/register">
                  <Menu.Item  
           name='sign_up'
         >Sign Up
@@ -36,25 +36,25 @@ class AppHeader extends Component {
           </NavLink> :  <Button onClick={this.logout}>
                 Log Out
                 </Button> }  
-                <NavLink to="patriots">
+                <NavLink to="/patriots">
                  <Menu.Item  
           name='patriots'
         >Patriots
             </Menu.Item>
             </NavLink> 
-            <NavLink to="bruins">
+            <NavLink to="/bruins">
                  <Menu.Item  
           name='bruins'
         >Bruins
             </Menu.Item>
             </NavLink> 
-            <NavLink to="redsox">
+            <NavLink to="/redsox">
                  <Menu.Item  
           name='redsox'
         >Red Sox
             </Menu.Item>
             </NavLink> 
-            <NavLink to="celtics">
+            <NavLink to="/celtics">
                  <Menu.Item  
           name='celtics'
         >Celtics

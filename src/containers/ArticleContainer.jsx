@@ -9,14 +9,10 @@ class ArticleContainer extends Component {
             <div>
               <strong>Latest Headlines</strong>
                     {listArticles}
-                    {/* <Route
-                     path={`articles/:id`} 
-                     render={routerProps => <Article {...routerProps} articles={this.props.articles} />}/> */}
             </div>
         )
     }
 }
-
 const getInfo = (state) => {
     return {
       articles: state.articles.all

@@ -44,14 +44,14 @@ class App extends Component {
   render() {
   return (
         <Switch>
-        <Route exact path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
-        <Route exact path="/articles/:id" component={Article}  />
-        <Route exact path="/articles/:id/edit" component={EditArticle}  />
-        <Route exact path="/write" render={routerProps => <TextEditor {...routerProps} />} />
-        <Route path="/login" component={Login} />
+        <Route path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
+        <Route path="/articles/:id" component={Article}  />
+        <Route path="/articles/:id/edit" component={EditArticle}  />
+        <Route path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/register" component={Register} />
-        <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />
+        <Route path="/login" component={Login} />
         <Route path="/:tag" render={routerProps => <SportPage {...routerProps} />} />
+        <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />
         <Route path="/" component={Home} />
         </Switch>
   );

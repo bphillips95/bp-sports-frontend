@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class SportPage extends Component {
 
@@ -16,7 +17,7 @@ class SportPage extends Component {
                     List of Articles
                     <br/>
                     <br/>
-                    {articles.map(article => article.name)}
+     {articles.map(article => <Link key={article.id} to={`articles/${article.id}`}> {article.name} </Link>)}
                 </div>
             )
             }
