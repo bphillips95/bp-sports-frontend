@@ -26,11 +26,14 @@ class Article extends Component {
         // forced equation bc params id is a string
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
        console.log(foundArticle)
-
-       
+       if(foundArticle) { 
+        let tagName = foundArticle.article_tags.map(article_tag => article_tag.name)
+      console.log(tagName)
+       }
 
        if (foundArticle) {
         return (
+            
             <Container text>
             <Header as='h2'>  
                 {foundArticle.title} </Header>

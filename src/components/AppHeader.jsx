@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Logo from '../logo.jpeg'
 import {Image, Menu, Button} from 'semantic-ui-react'
-import {Link } from 'react-router-dom'
+import {NavLink } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {logoutUser} from '../actions/action'
 class AppHeader extends Component {
@@ -14,47 +14,63 @@ class AppHeader extends Component {
         console.log(this.props.user)
     }
     render() {
-            return (    
-            <Menu tabular> <Link to="/">
+        // console.log(this.props.tags)
+            return (   
+            <Menu style={{color:'red'}} tabular > <NavLink to="/">
                 <Menu.Item >
                 <Image  src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
                  />
                 </Menu.Item>
-                </Link>
-                <Link to="register">
-                 <Menu.Item 
+                </NavLink>
+                <NavLink to="register">
+                 <Menu.Item  
           name='sign_up'
         >Sign Up
             </Menu.Item>
-            </Link> 
-          {!localStorage.token ? <Link to="/login">
+            </NavLink> 
+          {!localStorage.token ? <NavLink to="/login">
             <Menu.Item
           name='login'
         > Log In
           </Menu.Item>
-          </Link> :  <Button onClick={this.logout}>
+          </NavLink> :  <Button onClick={this.logout}>
                 Log Out
                 </Button> }  
+                <NavLink to="patriots">
+                 <Menu.Item  
+          name='patriots'
+        >Patriots
+            </Menu.Item>
+            </NavLink> 
+            <NavLink to="bruins">
+                 <Menu.Item  
+          name='bruins'
+        >Bruins
+            </Menu.Item>
+            </NavLink> 
+            <NavLink to="redsox">
+                 <Menu.Item  
+          name='redsox'
+        >Red Sox
+            </Menu.Item>
+            </NavLink> 
+            <NavLink to="celtics">
+                 <Menu.Item  
+          name='celtics'
+        >Celtics
+            </Menu.Item>
+            </NavLink> 
                
-                {/* if redux user state for writer is true link to write */}
-          {/* <Link to="/write" >
+                {/* if redux user state for writer is true NavLink to write */}
+          {/* <NavLink to="/write" >
           <Menu.Item>
                 Write an article
           </Menu.Item>
-          </Link> */}
-          {/* <Link to="/createwriter" >
-          <Menu.Item>
-                Create Writer
-          </Menu.Item>
-          </Link> */}
-          {/* <Link to="/selectwriter" >
-          <Menu.Item>
-                Select Writer
-          </Menu.Item>
-          </Link> */}
+          </NavLink> */}
+          
           <Menu.Item>
               {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
-              {localStorage.token ? <Link to="/profile" >Profile </Link> : null }
+              {localStorage.token ? <NavLink to="/profile" >Profile </NavLink> : null }
           </Menu.Item>
                 </Menu>
 
@@ -63,7 +79,8 @@ class AppHeader extends Component {
 }
 const mstp = (state) => {
     return { 
-        user: {...state.userInfo}
+        user: {...state.userInfo},
+        tags: {...state.tags}
     }
 }
 export default connect(mstp, {logoutUser})(AppHeader)

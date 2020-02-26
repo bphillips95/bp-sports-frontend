@@ -7,12 +7,14 @@ import { Provider } from 'react-redux'
 import {createStore,combineReducers} from 'redux'
 import articleReducer from './reducers/articleReducer';
 import userReducer from './reducers/userReducer';
+import tagReducer from './reducers/tagReducer'
 import AppHeader from './components/AppHeader'
 import { BrowserRouter as Router} from "react-router-dom";
 const rootReducer = combineReducers(
         {
           articles: articleReducer,
-          userInfo: userReducer
+          userInfo: userReducer,
+          tags: tagReducer
         }
       )
 

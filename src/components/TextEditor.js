@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import 'react-quill/dist/quill.bubble.css';
-
+import {connect} from 'react-redux'
 class TextEditor extends Component {
 
 		modules = {
@@ -49,8 +49,9 @@ class TextEditor extends Component {
 	// run post fetch with title, content and writer
 	handleSubmit = (evt) => {
 		console.log(this.state)
-		
+		// console.log(this.props.user.writer)
 		evt.preventDefault()
+		if(this.props.user.writer) {
 		fetch("http://localhost:3000/articles", {
 			method: "POST", 
 			headers: { 
@@ -62,6 +63,9 @@ class TextEditor extends Component {
 				user_id: localStorage.user_id
 			})
 		}).then(console.log)
+	} else { 
+		alert(`You are not authorized to write`)
+	}
 	}
 	
 
@@ -81,9 +85,11 @@ class TextEditor extends Component {
 	    );
 	}
 }
-// const getUser = (state) => {
-// 	user: state.user
-// }
+const getUser = (state) => {
+	return {
+	user: {...state.userInfo.user}
+}
+}
 
 
-export default TextEditor;
+export default connect(getUser)(TextEditor);

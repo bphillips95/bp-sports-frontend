@@ -3,17 +3,15 @@ import './App.css';
 import TextEditor from './components/TextEditor'
 import {Route, Switch} from "react-router-dom";
 import Home from './components/Home'
-import {initializeArticles, saveUserToState} from './actions/action'
+import {initializeArticles, saveUserToState, initializeTags} from './actions/action'
 import {connect} from 'react-redux'
 import ArticleContainer from './containers/ArticleContainer';
 import Article from './components/Article'
 import Login from './components/Login'
 import Register from './components/Register'
-import CreateWriter from './components/CreateWriter'
-import SelectWriter from './components/SelectWriter'
 import EditArticle from './components/EditArticle';
-import Semantic from './components/Semantic'
 import Profile from './components/Profile'
+import SportPage from './components/SportPage'
 class App extends Component {
 
   componentDidMount()  { 
@@ -32,7 +30,12 @@ class App extends Component {
     .then(user => { 
       this.props.saveUserToState(user)
     })
-    }
+    } 
+    fetch("http://localhost:3000/tags")
+    .then(r => r.json())
+    .then(tags => { 
+      this.props.initializeTags(tags)
+    })
   }
   handleRegister = (userInfo) => { 
     console.log(userInfo)
@@ -48,12 +51,10 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />
-        <Route path="/createwriter" component={CreateWriter} />
-        <Route path="/selectwriter" component={SelectWriter} />
-        <Route path="/semantic" component={Semantic} />
+        <Route path="/:tag" render={routerProps => <SportPage {...routerProps} />} />
         <Route path="/" component={Home} />
         </Switch>
   );
 }
 }
-export default connect(null, {initializeArticles, saveUserToState})(App);
+export default connect(null, {initializeArticles, saveUserToState, initializeTags})(App);
