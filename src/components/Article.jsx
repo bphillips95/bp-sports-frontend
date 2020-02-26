@@ -30,7 +30,6 @@ class Article extends Component {
         let tagName = foundArticle.article_tags.map(article_tag => article_tag.name)
       console.log(tagName)
        }
-
        if (foundArticle) {
         return (
             

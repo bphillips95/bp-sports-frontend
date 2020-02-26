@@ -40,18 +40,18 @@ class App extends Component {
   handleRegister = (userInfo) => { 
     console.log(userInfo)
   }
-
+// dynamic articles routes must be first, tag and home last
   render() {
   return (
         <Switch>
-        <Route path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
-        <Route path="/articles/:id" component={Article}  />
         <Route path="/articles/:id/edit" component={EditArticle}  />
+        <Route path="/articles/:id" component={Article}  />
+        <Route path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
         <Route path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
-        <Route path="/:tag" render={routerProps => <SportPage {...routerProps} />} />
         <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />
+        <Route path="/:tag" render={routerProps => <SportPage {...routerProps} />} />
         <Route path="/" component={Home} />
         </Switch>
   );
