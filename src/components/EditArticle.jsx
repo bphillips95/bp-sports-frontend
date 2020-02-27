@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import 'react-quill/dist/quill.bubble.css';
-
+import {updateArticle} from '../actions/action'
 class EditArticle extends Component {
 
 		modules = {
@@ -50,6 +50,7 @@ class EditArticle extends Component {
     }
     // For click from article page
     componentDidMount(){
+        // console.log(this.props)
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
         console.log(foundArticle)
         if (foundArticle) {  
@@ -74,7 +75,7 @@ class EditArticle extends Component {
         }
     }
     handleEdit = (evt) => {
-        console.log(this.state)
+        // console.log(this.state)
         let id = this.state.id
         // console.log(typeof(id)) is a number
         // evt.preventDefault()
@@ -93,7 +94,7 @@ class EditArticle extends Component {
 			})
         }).then(resp => resp.json())
         .then(article => {
-            console.log(article)
+            this.props.updateArticle(article)
         })
 
 	}
@@ -157,4 +158,4 @@ const getArticle = state => {
         articles: {...state}
     }
 }
-export default connect(getArticle)(EditArticle)
+export default connect(getArticle, {updateArticle})(EditArticle)

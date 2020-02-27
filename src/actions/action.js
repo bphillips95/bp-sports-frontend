@@ -16,6 +16,10 @@ export const deleteArticle = (article) => ({
   type: "DELETE_ARTICLE",
   payload: article
 })
+export const updateArticle = (article) => ({
+  type: "UPDATE_ARTICLE",
+  payload: article
+})
 export const logoutUser = () => ({
   type: "LOG_OUT_USER"
 })
@@ -23,4 +27,5 @@ export const initializeTags = (tags) => ({
   type: "INITIALIZE_TAGS",
   payload: tags
 })
+
 
