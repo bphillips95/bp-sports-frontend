@@ -95,6 +95,7 @@ class EditArticle extends Component {
         }).then(resp => resp.json())
         .then(article => {
             this.props.updateArticle(article)
+            this.props.history.push(`/articles/${id}`)
         })
 
 	}

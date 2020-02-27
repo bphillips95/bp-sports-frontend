@@ -66,6 +66,7 @@ class TextEditor extends Component {
 		}).then(r => r.json())
 		.then(article => { 
 			this.props.saveArticle(article)
+			this.props.history.push(`/articles/${article.id}`)
 		})
 	} else { 
 		alert(`You are not authorized to write`)

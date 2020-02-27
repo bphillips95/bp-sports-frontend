@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Header } from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import {Link } from 'react-router-dom'
+import {Link, Redirect } from 'react-router-dom'
 import {deleteArticle} from '../actions/action'
 
 class Article extends Component {
@@ -17,7 +17,8 @@ class Article extends Component {
             headers: { 
                 "Content-Type": "application/json"
             }
-        }).then(this.props.deleteArticle(id))
+        }).then(this.props.deleteArticle(id)).then(
+             this.props.history.push('/'))
     }
     render() {
         // find the if of line 8 in line 9 
