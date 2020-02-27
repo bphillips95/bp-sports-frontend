@@ -80,7 +80,8 @@ class EditArticle extends Component {
         // evt.preventDefault()
         // PATCH to only send some new info ie. title and content without changing writer
 		fetch(`http://localhost:3000/articles/${id}`, {
-			method: "PATCH", 
+            method: "PATCH", 
+            redirect: "follow",
 			headers: { 
 				"Content-Type": "application/json"
 			}, 
@@ -90,7 +91,11 @@ class EditArticle extends Component {
                 content: this.state.content
              }
 			})
-        }).then(console.log)
+        }).then(resp => resp.json())
+        .then(article => {
+            console.log(article)
+        })
+
 	}
 
     handleRender = () => {

@@ -6,7 +6,7 @@ class Profile extends Component {
     render() {
         if(this.props.user.userInfo.user) {
         console.log(this.props.user.userInfo.user) 
-        let {username, first_name, last_name, writer} = this.props.user.userInfo.user
+        let {username, first_name, last_name, writer, articles} = this.props.user.userInfo.user
         return (
             <div>
              Username: {username}
@@ -19,6 +19,11 @@ class Profile extends Component {
              <br/>
              <br/>
              {writer ? <Link to="/write" > Click to write an article </Link>  :  null}
+             <br/>
+             <br/>
+             {first_name} {last_name}'s Articles 
+             <br/>
+             {articles.map(article => <Link key={article.id} to={`articles/${article.id}`}> {article.title} </Link>)}
             </div>
         )
         }return (

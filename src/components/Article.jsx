@@ -25,14 +25,16 @@ class Article extends Component {
         // console.log(this.props.articles.all)
         // forced equation bc params id is a string
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
-       console.log(foundArticle)
-       if(foundArticle) { 
-        let tagName = foundArticle.article_tags.map(article_tag => article_tag.name)
-      console.log(tagName)
-       }
-       if (foundArticle) {
+    //    console.log(foundArticle)
+    //    if(foundArticle) { 
+    //     let tagName = foundArticle.article_tags.map(article_tag => article_tag.name)
+    //   console.log(tagName)
+    //    }
+    
+    if (foundArticle) {
+        // console.log(typeof(parseInt(localStorage.user_id)))
+        //    console.log(typeof(foundArticle.writer.writer_id))
         return (
-            
             <Container text>
             <Header as='h2'>  
                 {foundArticle.title} </Header>
@@ -41,8 +43,11 @@ class Article extends Component {
                 </h3>
             <div dangerouslySetInnerHTML={{__html: foundArticle.content}}></div>
            <br></br>
+           {/* Conditionally render Edit and delete if user id matches writer id */}
+           {foundArticle.writer.writer_id === parseInt(localStorage.user_id) ?  <div>
            <Link to={`/articles/${foundArticle.id}/edit`}  >Edit Article </Link> 
-            <button value={foundArticle.id} onClick={this.handleDeleteClick}>Delete Article</button>
+            <button value={foundArticle.id} onClick={this.handleDeleteClick}>Delete Article</button> </div>
+           : null }
             </Container>
         ) }
         else { 
