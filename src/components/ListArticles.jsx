@@ -5,8 +5,8 @@ import MlbLogo from '../mlb_logo3.png'
 import { BrowserRouter as Route, Link} from "react-router-dom";
 export default class ListArticles extends Component {
     render() {
-        let {title,content,id,writer} = this.props.article
-        // console.log(this.props.article)
+        let {title,content,id,writer,article_tags} = this.props.article
+        // console.log(article_tags)
         return (
         //     <List link>
         //     <List.Item>
@@ -25,8 +25,9 @@ export default class ListArticles extends Component {
        
         <Item.Meta>{writer.writer_name}</Item.Meta>
          <Item.Description>
-        </Item.Description>
-        <Item.Extra>Additional Details</Item.Extra> 
+        </Item.Description>{article_tags.length !== 0 ?
+        <Item.Extra> Team: {article_tags.map(article_tag => article_tag.name)}</Item.Extra> 
+        : null }
       </Item.Content>
     </Item>
     </Item.Group> 
