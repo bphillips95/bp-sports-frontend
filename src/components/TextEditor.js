@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import 'react-quill/dist/quill.bubble.css';
 import {connect} from 'react-redux'
+import {saveArticle} from '../actions/action'
 class TextEditor extends Component {
 
 		modules = {
@@ -62,7 +63,10 @@ class TextEditor extends Component {
 				content: this.state.content,
 				user_id: localStorage.user_id
 			})
-		}).then(console.log)
+		}).then(r => r.json())
+		.then(article => { 
+			this.props.saveArticle(article)
+		})
 	} else { 
 		alert(`You are not authorized to write`)
 	}
@@ -92,4 +96,4 @@ const getUser = (state) => {
 }
 
 
-export default connect(getUser)(TextEditor);
+export default connect(getUser, {saveArticle})(TextEditor);

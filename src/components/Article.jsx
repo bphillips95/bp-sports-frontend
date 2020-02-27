@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Header } from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import EditArticle from './EditArticle'
 import {Link } from 'react-router-dom'
+import {deleteArticle} from '../actions/action'
 
 class Article extends Component {
 
@@ -17,7 +17,7 @@ class Article extends Component {
             headers: { 
                 "Content-Type": "application/json"
             }
-        }).then(console.log)
+        }).then(this.props.deleteArticle(id))
     }
     render() {
         // find the if of line 8 in line 9 
@@ -52,7 +52,7 @@ class Article extends Component {
         ) }
         else { 
             return <div>
-                Loading, Loading
+                Article Not Found
             </div>
         }
        } 
@@ -64,4 +64,4 @@ const getArticle = state => {
 }
 // items: state.shoppingCart.itemIds.map(id => 
 //     state.products.itemsById[id]
-export default connect(getArticle)(Article)
+export default connect(getArticle, {deleteArticle})(Article)

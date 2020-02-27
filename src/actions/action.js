@@ -8,8 +8,12 @@ export const saveUserToState = userInfo => {
     type: "SAVE_USER_TO_STATE",
     payload: userInfo
   }}
-export const saveUpdatedArticle = (article) => ({
-  type: "SAVE_UPDATED_ARTICLE",
+export const saveArticle = (article) => ({
+  type: "SAVE_ARTICLE",
+  payload: article
+})
+export const deleteArticle = (article) => ({
+  type: "DELETE_ARTICLE",
   payload: article
 })
 export const logoutUser = () => ({
