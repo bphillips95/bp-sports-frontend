@@ -7,7 +7,9 @@ class ScoreBoard extends Component {
         let games = this.props.games.games
         console.log(games)
         return (
+            <div style={{overflow:"auto"}}>
             <Menu tabular > 
+            Scoreboard will be updated at 11AM EST
             {games.map(game => 
                  <Menu.Item  
           name='sign_up'
@@ -15,6 +17,7 @@ class ScoreBoard extends Component {
             </Menu.Item>
             )}
             </Menu>
+            </div>
                 )}
 }
 const getScores = state => {
