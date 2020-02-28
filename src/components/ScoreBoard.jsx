@@ -5,7 +5,7 @@ import {Menu,Image} from 'semantic-ui-react'
 class ScoreBoard extends Component {
     render() {
         let games = this.props.games.games
-        console.log(games)
+        // console.log(games)
         return (
             <div style={{overflow:"auto"}}>
             <Menu tabular > 

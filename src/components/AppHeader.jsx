@@ -92,10 +92,10 @@ class AppHeader extends Component {
            Teams
          </a>
          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-           <a className="dropdown-item" href="/redsox">Red Sox</a>
-           <a className="dropdown-item" href="/patriots">Patriots</a>
-           <a className="dropdown-item" href="/celtics">Celtics</a>
-           <a className="dropdown-item" href="/bruins">Bruins</a>
+         {this.props.tags.tags ? this.props.tags.tags.map(tag => 
+          <NavLink className="dropdown-item" key={tag.id} to={`/${tag.name.toLowerCase().replace(' ','')}`}>{tag.city} {tag.name}</NavLink>)
+           : null}
+           
            <div className="dropdown-divider"></div>
            <a className="dropdown-item" href="/write">Write an article</a>
           </div>
