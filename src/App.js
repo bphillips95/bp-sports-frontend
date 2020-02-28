@@ -3,7 +3,7 @@ import './App.css';
 import TextEditor from './components/TextEditor'
 import {Route, Switch} from "react-router-dom";
 import Home from './components/Home'
-import {initializeArticles, saveUserToState, initializeTags} from './actions/action'
+import {initializeArticles, saveUserToState, initializeTags, initializeScoreboard} from './actions/action'
 import {connect} from 'react-redux'
 import ArticleContainer from './containers/ArticleContainer';
 import Article from './components/Article'
@@ -12,6 +12,7 @@ import Register from './components/Register'
 import EditArticle from './components/EditArticle';
 import Profile from './components/Profile'
 import SportPage from './components/SportPage'
+import ScoreBoard from './components/ScoreBoard';
 class App extends Component {
 
   componentDidMount()  { 
@@ -35,8 +36,15 @@ class App extends Component {
     .then(r => r.json())
     .then(tags => { 
       this.props.initializeTags(tags)
-    })
-  }
+    })  
+    fetch("https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard")
+    .then(r => r.json())
+    .then(resp => { 
+      this.props.initializeScoreboard(resp.events)
+      })
+    }
+  
+
   handleRegister = (userInfo) => { 
     console.log(userInfo)
   }
@@ -57,4 +65,4 @@ class App extends Component {
   );
 }
 }
-export default connect(null, {initializeArticles, saveUserToState, initializeTags})(App);
+export default connect(null, {initializeArticles, saveUserToState, initializeTags, initializeScoreboard})(App);

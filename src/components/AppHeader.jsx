@@ -4,6 +4,7 @@ import {Image, Menu, Button} from 'semantic-ui-react'
 import {NavLink } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {logoutUser} from '../actions/action'
+import ScoreBoard from './ScoreBoard'
 class AppHeader extends Component {
    
     logout = () => {
@@ -16,6 +17,7 @@ class AppHeader extends Component {
     render() {
         // console.log(this.props.tags)
             return (   
+              <div>
             <Menu style={{color:'red'}} tabular > <NavLink to="/">
                 <Menu.Item >
                 <Image  src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
@@ -72,7 +74,26 @@ class AppHeader extends Component {
               {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
               {localStorage.token ? <NavLink to="/profile" >Profile </NavLink> : null }
           </Menu.Item>
+          <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="/teams" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Teams
+         </a>
+         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+           <a className="dropdown-item" href="/redsox">Red Sox</a>
+           <a className="dropdown-item" href="/patriots">Patriots</a>
+           <a className="dropdown-item" href="/celtics">Celtics</a>
+           <a className="dropdown-item" href="/bruins">Bruins</a>
+           <div className="dropdown-divider"></div>
+           <a className="dropdown-item" href="/write">Write an article</a>
+          </div>
+         </li>
                 </Menu>
+<ScoreBoard/>
+
+</div>
+
+
+
 // / <nav class="navbar navbar-expand-lg navbar-light bg-light">
 //   <a class="navbar-brand" href="/">BP Sports</a>
 //   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -23,7 +23,7 @@ class Profile extends Component {
              <br/>
              {first_name} {last_name}'s Articles 
              <br/>
-             {articles.map(article => <Link key={article.id} to={`articles/${article.id}`}> {article.title} </Link>)}
+             {articles.map(article => <Link key={article.id} to={`articles/${article.id}`}> <br/>{article.title} </Link>)}
             </div>
         )
         }return (

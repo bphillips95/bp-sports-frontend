@@ -27,5 +27,10 @@ export const initializeTags = (tags) => ({
   type: "INITIALIZE_TAGS",
   payload: tags
 })
+export const initializeScoreboard = (payload) => ({
+  type: "INITIALIZE_SCOREBOARD",
+  payload
+})
+
 
 

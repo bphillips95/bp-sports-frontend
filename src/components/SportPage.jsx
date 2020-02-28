@@ -16,8 +16,7 @@ class SportPage extends Component {
                     <br/>
                     List of Articles
                     <br/>
-                    <br/>
-     {articles.map(article => <Link key={article.id} to={`articles/${article.id}`}> {article.name} </Link>)}
+     {articles.map(article => <Link key={article.id} to={`articles/${article.id}`}> <br/>{article.name} </Link>)}
                 </div>
             )
             }

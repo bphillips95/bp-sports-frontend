@@ -25,37 +25,38 @@ class Article extends Component {
         // console.log(this.props.match.params.id)
         // console.log(this.props.articles.all)
         // forced equation bc params id is a string
-        let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
+        let foundArticle = this.props.articles?.articles?.all.find(obj => obj.id == this.props.match.params.id)
     //    console.log(foundArticle)
     //    if(foundArticle) { 
     //     let tagName = foundArticle.article_tags.map(article_tag => article_tag.name)
     //   console.log(tagName)
     //    }
     
-    if (foundArticle) {
+    // if (foundArticle) {
         // console.log(typeof(parseInt(localStorage.user_id)))
         //    console.log(typeof(foundArticle.writer.writer_id))
         return (
             <Container text>
             <Header as='h2'>  
-                {foundArticle.title} </Header>
+                {foundArticle?.title} </Header>
                 <h3>
-                   By {foundArticle.writer.writer_name}
+                   By {foundArticle?.writer?.writer_name}
                 </h3>
-            <div dangerouslySetInnerHTML={{__html: foundArticle.content}}></div>
+            <div dangerouslySetInnerHTML={{__html: foundArticle?.content}}></div>
            <br></br>
            {/* Conditionally render Edit and delete if user id matches writer id */}
-           {foundArticle.writer.writer_id === parseInt(localStorage.user_id) ?  <div>
+           {foundArticle?.writer?.writer_id === parseInt(localStorage.user_id) ?  <div>
            <Link to={`/articles/${foundArticle.id}/edit`}  >Edit Article </Link> 
             <button value={foundArticle.id} onClick={this.handleDeleteClick}>Delete Article</button> </div>
            : null }
             </Container>
-        ) }
-        else { 
-            return <div>
-                Article Not Found
-            </div>
-        }
+        ) 
+    // }
+        // else { 
+        //     return <div>
+        //         Article Not Found
+        //     </div>
+        // }
        } 
     }
 const getArticle = state => {
