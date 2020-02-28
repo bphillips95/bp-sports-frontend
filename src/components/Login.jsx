@@ -39,6 +39,7 @@ class Login extends Component {
             this.props.saveUserToState(resp)
             this.props.history.push('/')
         } else {
+            alert("Wrong username or password")
             console.log(resp.error)
             this.setState({
                 error: resp.error

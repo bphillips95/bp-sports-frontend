@@ -84,9 +84,6 @@ class AppHeader extends Component {
         <NavLink to="/login" class="nav-link" >Log In</NavLink> : 
           <button onClick={this.logout} type="button" class="btn btn-light"> Log Out</button>}
           </li>
-      <li class="nav-item">
-      {localStorage.token ? <NavLink to="/profile" className="nav-link" >Profile </NavLink> : null }
-      </li>
           <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="/teams" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Teams
@@ -100,13 +97,19 @@ class AppHeader extends Component {
            <a className="dropdown-item" href="/write">Write an article</a>
           </div>
          </li>
-         <li  class="nav-item">
+         <li class="nav-item">
+        <NavLink to="/standings" class="nav-link" >Standings </NavLink>
+      </li>
+         <ul  class="form-inline my-2 my-lg-0" style={{"margin-left": "55vw"}}>
          {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
+      </ul>
+      <li class="nav-item">
+      {localStorage.token ? <NavLink to="/profile" className="nav-link" >Profile </NavLink> : null }
       </li>
       
          </ul>
     {/* <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> */}
   </div>

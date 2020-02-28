@@ -12,7 +12,7 @@ import Register from './components/Register'
 import EditArticle from './components/EditArticle';
 import Profile from './components/Profile'
 import SportPage from './components/SportPage'
-import ScoreBoard from './components/ScoreBoard';
+import Standings from './components/Standings';
 class App extends Component {
 
   componentDidMount()  { 
@@ -56,6 +56,7 @@ class App extends Component {
         <Route path="/articles/:id" component={Article}  />
         <Route path="/articles" render={routerProps => <ArticleContainer {...routerProps}/>} />
         <Route path="/write" render={routerProps => <TextEditor {...routerProps} />} />
+        <Route path="/standings" component={Standings} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />

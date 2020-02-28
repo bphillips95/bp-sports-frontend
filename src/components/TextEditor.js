@@ -76,12 +76,14 @@ class TextEditor extends Component {
 	}
 	}
 	handleClick = (evt) => {
+		console.log(evt.target)
 		this.setState({
 			tag_id: parseInt(evt.target.value)
 		})
 	}
 	
 	render() {
+		// console.log(this.props.tags)
 	    return (
 			// switch to form at some point
 	      <div >
@@ -95,12 +97,45 @@ class TextEditor extends Component {
 			<button onClick={this.handleSubmit} type="submit" >Submit</button>
 
 			{this.props.tags[0] ? 
-			  <div>
-<button className="btn btn-primary" value={this.props.tags[0].id} onClick={this.handleClick}>{this.props.tags[0].name}</button>
-<button className="btn btn-primary" value={this.props.tags[1].id} onClick={this.handleClick}>{this.props.tags[1].name}</button>
-<button className="btn btn-primary" value={this.props.tags[2].id} onClick={this.handleClick}>{this.props.tags[2].name}</button>
-<button className="btn btn-primary" value={this.props.tags[3].id} onClick={this.handleClick}>{this.props.tags[3].name}</button>
-		</div> : null }
+		// its nested objects in objects, find a good way to iterate and rewrite
+		<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Tag the article
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <button className="dropdown-item" value={this.props.tags[0].id} onClick={this.handleClick}>{this.props.tags[0].name}</button>
+  <button className="dropdown-item" value={this.props.tags[1].id} onClick={this.handleClick}>{this.props.tags[1].name}</button>
+<button className="dropdown-item" value={this.props.tags[2].id} onClick={this.handleClick}>{this.props.tags[2].name}</button>
+<button className="dropdown-item" value={this.props.tags[3].id} onClick={this.handleClick}>{this.props.tags[3].name}</button> 
+<button className="dropdown-item" value={this.props.tags[4].id} onClick={this.handleClick}>{this.props.tags[4].name}</button>
+  <button className="dropdown-item" value={this.props.tags[5].id} onClick={this.handleClick}>{this.props.tags[5].name}</button>
+<button className="dropdown-item" value={this.props.tags[6].id} onClick={this.handleClick}>{this.props.tags[6].name}</button>
+<button className="dropdown-item" value={this.props.tags[7].id} onClick={this.handleClick}>{this.props.tags[7].name}</button> 
+<button className="dropdown-item" value={this.props.tags[8].id} onClick={this.handleClick}>{this.props.tags[8].name}</button>
+  <button className="dropdown-item" value={this.props.tags[9].id} onClick={this.handleClick}>{this.props.tags[9].name}</button>
+<button className="dropdown-item" value={this.props.tags[10].id} onClick={this.handleClick}>{this.props.tags[10].name}</button>
+<button className="dropdown-item" value={this.props.tags[11].id} onClick={this.handleClick}>{this.props.tags[11].name}</button> 
+<button className="dropdown-item" value={this.props.tags[12].id} onClick={this.handleClick}>{this.props.tags[12].name}</button>
+  <button className="dropdown-item" value={this.props.tags[13].id} onClick={this.handleClick}>{this.props.tags[13].name}</button>
+<button className="dropdown-item" value={this.props.tags[14].id} onClick={this.handleClick}>{this.props.tags[14].name}</button>
+<button className="dropdown-item" value={this.props.tags[15].id} onClick={this.handleClick}>{this.props.tags[15].name}</button> 
+<button className="dropdown-item" value={this.props.tags[16].id} onClick={this.handleClick}>{this.props.tags[16].name}</button>
+  <button className="dropdown-item" value={this.props.tags[17].id} onClick={this.handleClick}>{this.props.tags[17].name}</button>
+<button className="dropdown-item" value={this.props.tags[18].id} onClick={this.handleClick}>{this.props.tags[18].name}</button>
+<button className="dropdown-item" value={this.props.tags[19].id} onClick={this.handleClick}>{this.props.tags[19].name}</button> 
+<button className="dropdown-item" value={this.props.tags[20].id} onClick={this.handleClick}>{this.props.tags[0].name}</button>
+  <button className="dropdown-item" value={this.props.tags[21].id} onClick={this.handleClick}>{this.props.tags[1].name}</button>
+<button className="dropdown-item" value={this.props.tags[22].id} onClick={this.handleClick}>{this.props.tags[22].name}</button>
+<button className="dropdown-item" value={this.props.tags[23].id} onClick={this.handleClick}>{this.props.tags[23].name}</button> 
+<button className="dropdown-item" value={this.props.tags[24].id} onClick={this.handleClick}>{this.props.tags[24].name}</button>
+  <button className="dropdown-item" value={this.props.tags[25].id} onClick={this.handleClick}>{this.props.tags[25].name}</button>
+<button className="dropdown-item" value={this.props.tags[26].id} onClick={this.handleClick}>{this.props.tags[26].name}</button>
+<button className="dropdown-item" value={this.props.tags[27].id} onClick={this.handleClick}>{this.props.tags[27].name}</button> 
+<button className="dropdown-item" value={this.props.tags[28].id} onClick={this.handleClick}>{this.props.tags[28].name}</button>
+  <button className="dropdown-item" value={this.props.tags[29].id} onClick={this.handleClick}>{this.props.tags[1].name}</button>
+
+  </div>
+</div> : null }
 	      </div>
 	    );
 	}
