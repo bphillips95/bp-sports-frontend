@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import {saveUserToState} from '../actions/action'
 import {connect} from 'react-redux'
 import { Button, Form, Grid, Header, Image, Message, Segment, Checkbox } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
+import Logo from '../logo.jpeg'
 class Register extends Component {
 
     state = { 
@@ -52,6 +54,7 @@ class Register extends Component {
             this.props.history.push('/')
         } else {
             console.log(resp.error)
+            alert("Please enter a password between 6-20 letters")
             this.setState({
                 error: resp.error
             })
@@ -64,7 +67,7 @@ class Register extends Component {
             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
               <Header as='h2' color='teal' textAlign='center'>
-                {/* <Image src='/logo.png' />  */}
+                <Image src={Logo} /> 
                 Sign up for an account
               </Header>
               <Form size='large' onSubmit={this.handleSubmit}>
@@ -91,7 +94,7 @@ class Register extends Component {
                 </Segment>
               </Form>
               <Message>
-                Already have an account? <a href='/login'>Log In</a>
+                Already have an account? <Link to='/login'>Log In</Link> 
               </Message>
             </Grid.Column>
           </Grid>
