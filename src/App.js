@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import ReactGA from 'react-ga';
 import './App.css';
 import TextEditor from './components/TextEditor'
 import {Route, Switch} from "react-router-dom";
@@ -15,6 +16,10 @@ import SportPage from './components/SportPage'
 import Standings from './components/Standings';
 class App extends Component {
 
+//   function initializeReactGA() {
+//     ReactGA.initialize('UA-155000986-1');
+//     ReactGA.pageview('/homepage');
+// }
   componentDidMount()  { 
     fetch("https://bp-sports-backend.herokuapp.com/articles")
     .then(r => r.json())
