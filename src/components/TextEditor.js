@@ -50,6 +50,7 @@ class TextEditor extends Component {
 	
 	// run post fetch with title, content and writer
 	handleSubmit = (evt) => {
+		if (this.state.content.length > 0 && this.state.title.length > 0) {
 		console.log(this.state)
 		// console.log(this.props.user.writer)
 		evt.preventDefault()
@@ -74,6 +75,9 @@ class TextEditor extends Component {
 	} else { 
 		alert(`You are not authorized to write`)
 	}
+} else { 
+	alert("Please do not submit an empty title or article")
+}
 	}
 	handleClick = (evt) => {
 		console.log(evt.target)
