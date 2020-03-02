@@ -12,7 +12,7 @@ class Article extends Component {
         // console.log(id)
         // let articleToDelete = this.props.articles.articles.all.find(obj => obj.id == evt.target.value)
         // console.log(articleToDelete)
-        fetch(`http://localhost:3000/articles/${id}`, {
+        fetch(`https://bp-sports-backend.herokuapp.com/articles/${id}`, {
             method: "DELETE",
             headers: { 
                 "Content-Type": "application/json"

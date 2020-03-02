@@ -28,7 +28,7 @@ class Register extends Component {
 
     handleSubmit = (evt) => {
         evt.preventDefault()
-        fetch("http://localhost:3000/api/v1/users",{
+        fetch("https://bp-sports-backend.herokuapp.com/api/v1/users",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

@@ -54,7 +54,7 @@ class TextEditor extends Component {
 		// console.log(this.props.user.writer)
 		evt.preventDefault()
 		if(this.props.user.writer) {
-		fetch("http://localhost:3000/articles", {
+		fetch("https://bp-sports-backend.herokuapp.com/articles", {
 			method: "POST", 
 			headers: { 
 				"Content-Type": "application/json"

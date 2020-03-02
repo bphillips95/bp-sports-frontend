@@ -80,7 +80,7 @@ class EditArticle extends Component {
         // console.log(typeof(id)) is a number
         // evt.preventDefault()
         // PATCH to only send some new info ie. title and content without changing writer
-		fetch(`http://localhost:3000/articles/${id}`, {
+		fetch(`https://bp-sports-backend.herokuapp.com/articles/${id}`, {
             method: "PATCH", 
             redirect: "follow",
 			headers: { 
