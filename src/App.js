@@ -16,14 +16,14 @@ import Standings from './components/Standings';
 class App extends Component {
 
   componentDidMount()  { 
-    fetch("http://bp-sports-backend.herokuapp.com/articles")
+    fetch("https://bp-sports-backend.herokuapp.com/articles")
     .then(r => r.json())
     .then(articles => { 
       this.props.initializeArticles(articles)
     }) 
     if(localStorage.getItem("token")) {
       let token = localStorage.getItem("token")
-    fetch("http://bp-sports-backend.herokuapp.com/api/v1/persist", { 
+    fetch("https://bp-sports-backend.herokuapp.com/api/v1/persist", { 
       headers: {
         "Authorization": `bearer ${token}`
       }
@@ -32,7 +32,7 @@ class App extends Component {
       this.props.saveUserToState(user)
     })
     } 
-    fetch("http://bp-sports-backend.herokuapp.com/tags")
+    fetch("https://bp-sports-backend.herokuapp.com/tags")
     .then(r => r.json())
     .then(tags => { 
       this.props.initializeTags(tags)
