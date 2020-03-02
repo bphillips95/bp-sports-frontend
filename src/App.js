@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactGA from 'react-ga';
 import './App.css';
 import TextEditor from './components/TextEditor'
 import {Route, Switch} from "react-router-dom";
@@ -14,16 +13,9 @@ import EditArticle from './components/EditArticle';
 import Profile from './components/Profile'
 import SportPage from './components/SportPage'
 import Standings from './components/Standings';
-import { createBrowserHistory } from 'history';
 class App extends Component {
 
   componentDidMount()  { 
-    ReactGA.initialize('UA-155000986-1')
-    const history = createBrowserHistory();
-    history.listen(location => {
-      ReactGA.set({ page: location.pathname }); // Update the user's current page
-      ReactGA.pageview(location.pathname); // Record a pageview for the given page
-    });
     fetch("https://bp-sports-backend.herokuapp.com/articles")
     .then(r => r.json())
     .then(articles => { 
