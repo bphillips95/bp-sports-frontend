@@ -100,6 +100,9 @@ class AppHeader extends Component {
          <li class="nav-item">
         <NavLink to="/standings" class="nav-link" >Standings </NavLink>
       </li>
+      <li class="nav-item">
+        <NavLink to="/store" class="nav-link" >Merch </NavLink>
+      </li>
          <ul  class="form-inline my-2 my-lg-0" style={{"marginLeft": "55vw"}}>
          {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
       </ul>

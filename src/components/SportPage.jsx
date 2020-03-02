@@ -8,10 +8,10 @@ class SportPage extends Component {
         if(this.props.tags.tags) {
             const sportsTag = this.props.tags.tags.find(tag => tag.name.toLowerCase().replace(' ','') === this.props.match.params.tag)
             console.log(sportsTag)
-            let {name, articles} = sportsTag
+            let {city, name, articles} = sportsTag
             return ( 
                 <div>
-                  for the {name}
+                  for the {city} {name}
                     <br/>
                     <br/>
                     List of Articles
@@ -24,7 +24,7 @@ class SportPage extends Component {
     render() {
         return (
             <div>
-                <strong>This the Sport Page</strong>
+                <strong>This the Page</strong>
                 {this.handleRender()}
             </div>
         )

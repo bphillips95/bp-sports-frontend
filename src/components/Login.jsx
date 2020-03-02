@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { saveUserToState } from '../actions/action'
+import {Grid,Header,Image,Form,Segment,Button,Message} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
+import Logo from '../logo.jpeg'
 
 class Login extends Component {
 
@@ -50,17 +53,35 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                <label>Username</label>
-                <input type="text" name="username" onChange={this.handleChange} value={this.state.username}/>
-                <br/>
-                <label>Password</label>
-                <input type="password" name="password" onChange={this.handleChange} value={this.state.password}  />
-                <br/>
-                <button type="submit" > Log In</button>
-                </form>
-            </div>
+            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+            <Grid.Column style={{ maxWidth: 450 }}>
+              <Header as='h2' color='teal' textAlign='center'>
+                <Image src={Logo} /> 
+                Log in to your account
+              </Header>
+              <Form size='large' onSubmit={this.handleSubmit}>
+                <Segment stacked>
+                  <Form.Input fluid icon='user' iconPosition='left' name="username" placeholder="Username"
+                  onChange={this.handleChange} value={this.state.username} />
+                  <Form.Input
+                    name="password"
+                    fluid
+                    icon='lock'
+                    iconPosition='left'
+                    placeholder='Password'
+                    type='password'
+                    onChange={this.handleChange} value={this.state.password}
+                  />
+                  <Button color='teal' fluid size='large'>
+                    Log In
+                  </Button>
+                </Segment>
+              </Form>
+              <Message>
+                Dont't have an account? <Link to='/register'>Sign Up</Link> 
+              </Message>
+            </Grid.Column>
+          </Grid>
         )
     }
 }
