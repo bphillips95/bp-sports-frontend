@@ -17,7 +17,7 @@ import Standings from './components/Standings';
 import Store from './components/Store'
 import { createBrowserHistory } from 'history';
 class App extends Component {
-
+  
   componentDidMount()  { 
     ReactGA.initialize('UA-155000986-1')
     const history = createBrowserHistory();
