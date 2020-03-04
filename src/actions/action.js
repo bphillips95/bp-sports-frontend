@@ -31,6 +31,11 @@ export const initializeScoreboard = (payload) => ({
   type: "INITIALIZE_SCOREBOARD",
   payload
 })
+export const updateUser = (user) => ({
+  type: "UPDATE_USER",
+  payload: user
+})
+
 
 
 

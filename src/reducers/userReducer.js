@@ -10,7 +10,8 @@ export default (state = initialState, { type, payload }) => {
         return { ...state, ...payload }
     case 'LOG_OUT_USER':
         return {userInfo: {} }
-
+    case 'UPDATE_USER': 
+        return { ...payload}
     default:
         return state
     }

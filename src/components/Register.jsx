@@ -21,6 +21,7 @@ class Register extends Component {
         })
     }
     handleWriterCheck = () => {
+      // alert("WARNING, UNCHECKING THIS BOX WILL MAKE YOU UNABLE TO WRITE ARTICLES")
       this.setState({
         writer: !this.state.writer
       })
@@ -87,6 +88,7 @@ class Register extends Component {
                     type='password'
                     onChange={this.handleChange} value={this.state.password}
                   />
+
                     Would you like to be a writer? <Checkbox onClick={this.handleWriterCheck}/>  
                   <Button color='teal' fluid size='large'>
                     Sign Up

@@ -4,9 +4,8 @@ import LogoShirt from '../shirt_with_logo.jpeg'
 import ShirtDesign1 from '../shirt_design_1.jpeg'
 import StripeCheckout from 'react-stripe-checkout';
 
-
 export default class Store extends Component {
- 
+  
   onToken = (token) => {
     fetch('https://bp-sports-backend.herokuapp.com/charges', {
       method: 'POST',
