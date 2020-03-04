@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { List, Item, Image} from 'semantic-ui-react'
+import { List, Item, Image, Grid} from 'semantic-ui-react'
 import MlbLogo from '../mlb_logo3.png'
 // need Route ignore VScode
 import { BrowserRouter as Route, Link} from "react-router-dom";

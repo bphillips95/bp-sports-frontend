@@ -6,12 +6,13 @@ class SportPage extends Component {
 
     handleRender = () => {
         if(this.props.tags.tags) {
-            const sportsTag = this.props.tags.tags.find(tag => tag.name.toLowerCase().replace(' ','') === this.props.match.params.tag)
+            const sportsTag = this.props?.tags?.tags?.find(tag => tag.name.toLowerCase().replace(' ','') === this.props.match.params.tag)
+            if(sportsTag) { 
             console.log(sportsTag)
             let {city, name, articles} = sportsTag
             return ( 
                 <div>
-                  for the {city} {name}
+                 This the Page for the {city} {name}
                     <br/>
                     <br/>
                     List of Articles
@@ -20,11 +21,12 @@ class SportPage extends Component {
                 </div>
             )
             }
+        }
     }
     render() {
         return (
             <div>
-                <strong>This the Page</strong>
+                <h2>Please go to a valid page</h2>
                 {this.handleRender()}
             </div>
         )
