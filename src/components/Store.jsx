@@ -8,7 +8,7 @@ import StripeCheckout from 'react-stripe-checkout';
 export default class Store extends Component {
  
   onToken = (token) => {
-    fetch('http://localhost:3000/charges', {
+    fetch('https://bp-sports-backend.herokuapp.com/charges', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
