@@ -20,13 +20,17 @@ class SportPage extends Component {
      {articles.map(article => <Link key={article.id} to={`articles/${article.id}`}> <br/>{article.name} </Link>)}
                 </div>
             )
+            } else {
+                return(
+                    <h2>Please go to a valid page</h2>
+                )
+
             }
         }
     }
     render() {
         return (
             <div>
-                <h2>Please go to a valid page</h2>
                 {this.handleRender()}
             </div>
         )

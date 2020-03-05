@@ -76,9 +76,9 @@ class AppHeader extends Component {
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <NavLink to="/register" class="nav-link" >Sign Up <span class="sr-only">(current)</span></NavLink>
-      </li>
+       <li className="nav-item">
+       {!localStorage.token ?  <NavLink to="/register" className="nav-link" >Sign Up <span class="sr-only">(current)</span></NavLink> : null}
+      </li> 
       <li class="nav-item">
        {!localStorage.token ? 
         <NavLink to="/login" class="nav-link" >Log In</NavLink> : 
@@ -98,18 +98,20 @@ class AppHeader extends Component {
           </div>
          </li>
          <li class="nav-item">
-        <NavLink to="/standings" class="nav-link" >Standings </NavLink>
+        <NavLink to="/standings" className="nav-link" >Standings </NavLink>
       </li>
       <li class="nav-item">
-        <NavLink to="/store" class="nav-link" >Merch </NavLink>
+        <NavLink to="/store" className="nav-link" >Merch </NavLink>
+      </li>
+      <li class="nav-item">
+      {this.props.user?.user?.writer? <NavLink to="/write" className="nav-link" >Write an Article </NavLink> : null }
       </li>
          <ul  class="form-inline my-2 my-lg-0" style={{"marginLeft": "55vw"}}>
-         {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
+         {localStorage.token ? `Welcome ${localStorage.user}` : null}
       </ul>
       <li class="nav-item">
       {localStorage.token ? <NavLink to="/profile" className="nav-link" >Profile </NavLink> : null }
       </li>
-      
          </ul>
     {/* <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
