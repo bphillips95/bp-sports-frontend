@@ -139,7 +139,7 @@ class TextEditor extends Component {
   <button className="dropdown-item" value={this.props.tags[29].id} onClick={this.handleClick}>{this.props.tags[1].name}</button>
 
   </div>
-</div> : null }
+</div> : null } {this.state.tag_id ? "Thank you for tagging your article" : "Please tag your article"}
 	      </div>
 	    );
 	}
