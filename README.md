@@ -10,3 +10,4 @@
 
 6. User can buy merhcandise using Stripe API. 
 
+7. Backend could be found at https://github.com/bphillips95/bp-sports-backend
