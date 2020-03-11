@@ -1,3 +1,5 @@
+README
+
 1. Go to bp-sports.netlify.com to use app. 
 
 2. This app is built with ReactJS for the front-end, and Ruby on Rails back-end. It utilizes Redux to store information in a central state. 
