@@ -15,7 +15,7 @@ import Profile from './components/Profile'
 import SportPage from './components/SportPage'
 import Standings from './components/Standings';
 import Store from './components/Store'
-import Semantic from './components/Semantic'
+// import Semantic from './components/Semantic'
 import { createBrowserHistory } from 'history';
 class App extends Component {
   
@@ -68,7 +68,7 @@ class App extends Component {
         <Route path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/standings" component={Standings} />
         <Route path="/store" component={Store}/>
-        <Route path="/semantic" component={Semantic}/>
+        {/* <Route path="/semantic" component={Semantic}/> */}
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />

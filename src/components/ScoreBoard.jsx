@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {Menu,Image} from 'semantic-ui-react'
+import {Menu} from 'semantic-ui-react'
  
 class ScoreBoard extends Component {
 
