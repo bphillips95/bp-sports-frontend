@@ -1,6 +1,6 @@
 README
 
-1. Go to bp-sports.netlify.com to use app. 
+1. Go to https://bp-sports.netlify.com/ to use app. This app is using netlify for hosting which is a SPA(Single-Page-Application) hosting site, so if you refresh the page and the URL is anything but the home page, you will have an error.
 
 2. This app is built with ReactJS for the front-end, and Ruby on Rails back-end. It utilizes Redux to store information in a central state. 
 
