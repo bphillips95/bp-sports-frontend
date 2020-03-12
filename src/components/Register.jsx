@@ -105,16 +105,3 @@ class Register extends Component {
 }
 
 export default connect(null, {saveUserToState})(Register)
-
- // <div>
-            //     <h3>Sign Up Form</h3>
-            //     <Form onSubmit={this.handleSubmit}>
-            //       <Form.Group widths="equal">
-            //     <Form.Input type="text" name="username" placeholder="username" fluid label="Username"
-            //     onChange={this.handleChange} value={this.state.username}/>
-            //     <Form.Input type="password" name="password" placeholder="password" fluid label="Password"
-            //     onChange={this.handleChange} value={this.state.password}/>
-            //     </Form.Group>
-            //     <Form.Button>Sign Up</Form.Button>
-            //     </Form>
-            // </div>

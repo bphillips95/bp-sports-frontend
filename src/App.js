@@ -15,8 +15,8 @@ import Profile from './components/Profile'
 import SportPage from './components/SportPage'
 import Standings from './components/Standings';
 import Store from './components/Store'
-// import Semantic from './components/Semantic'
 import { createBrowserHistory } from 'history';
+
 class App extends Component {
   
   componentDidMount()  { 
@@ -53,11 +53,7 @@ class App extends Component {
       this.props.initializeScoreboard(resp.events)
       })
     }
-  
 
-  handleRegister = (userInfo) => { 
-    console.log(userInfo)
-  }
 // dynamic articles routes must be first, tag and home last
   render() {
   return (
@@ -68,7 +64,6 @@ class App extends Component {
         <Route path="/write" render={routerProps => <TextEditor {...routerProps} />} />
         <Route path="/standings" component={Standings} />
         <Route path="/store" component={Store}/>
-        {/* <Route path="/semantic" component={Semantic}/> */}
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/profile" render={routerProps => <Profile {...routerProps} />} />

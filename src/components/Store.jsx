@@ -7,21 +7,21 @@ import StripeCheckout from 'react-stripe-checkout';
 export default class Store extends Component {
   
   onToken = (token) => {
-    fetch('https://bp-sports-backend.herokuapp.com/charges', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-    },
-      body: JSON.stringify({
-        token: token.id,
-        amount: 2495
-      }),
-    }).then(response => {
-      response.json().then(data => {
-        alert("Your payment was succesfull");
-      });
-    });
+  //   fetch('https://bp-sports-backend.herokuapp.com/charges', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //   },
+  //     body: JSON.stringify({
+  //       token: token.id,
+  //       amount: 2495
+  //     }),
+  //   }).then(response => {
+  //     response.json().then(data => {
+    //     });
+    //   });
+          alert("Your payment was succesfull");
   }
     
     render() {
