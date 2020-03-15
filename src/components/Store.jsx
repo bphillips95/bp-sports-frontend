@@ -6,21 +6,24 @@ import StripeCheckout from 'react-stripe-checkout';
 
 export default class Store extends Component {
   
+  handleBuy = () => {
+    alert("Thank you for your purchase.")
+  }
   onToken = (token) => {
-  //   fetch('https://bp-sports-backend.herokuapp.com/charges', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json'
-  //   },
-  //     body: JSON.stringify({
-  //       token: token.id,
-  //       amount: 2495
-  //     }),
-  //   }).then(response => {
-  //     response.json().then(data => {
-    //     });
-    //   });
+    fetch('https://bp-sports-backend.herokuapp.com/charges', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    },
+      body: JSON.stringify({
+        token: token.id,
+        amount: 2495
+      }),
+    }).then(response => {
+      response.json().then(data => {
+        });
+      });
           alert("Your payment was succesfull");
   }
     
@@ -35,6 +38,7 @@ export default class Store extends Component {
       <p class="card-text">This shirt has the classic BP Sports Logo </p>
     </div>
     <div class="card-footer">
+      {/* <button onClick={this.handleBuy}>Buy</button> */}
       <StripeCheckout
         token={this.onToken}
         label="Pay with 💳"
@@ -51,6 +55,7 @@ export default class Store extends Component {
       <p class="card-text">Plain T-shirt with classic design</p>
     </div>
     <div class="card-footer">
+    {/* <button onClick={this.handleBuy}>Buy</button> */}
     <StripeCheckout
         token={this.onToken}
         label="Pay with 💳"
@@ -76,6 +81,7 @@ export default class Store extends Component {
       <p class="card-text">Plain T-shirt with bat and ball design</p>
     </div>
     <div class="card-footer">
+    {/* <button onClick={this.handleBuy}>Buy</button> */}
     <StripeCheckout
         token={this.onToken}
         label="Pay with 💳"
