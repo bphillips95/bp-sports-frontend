@@ -26,18 +26,18 @@ REACT QUILL - https://github.com/zenoamaro/react-quill
 REACT GOOGLE ANALYTICS - https://github.com/react-ga/react-ga
 
 
-#### NOTE This app is using netlify for hosting which is an SPA(Single-Page-Application) hosting site, so if you refresh the page and the URL is anything but the home page, you will have an error.
+#### NOTE: This app is using netlify for hosting which is an SPA(Single-Page-Application) hosting site, so if you refresh the page and the URL is anything but the home page, you will have an error.
 
 ## Contributing
 
 To contribute to BP SPORTS, follow these steps:
 
 Fork this repository.
-Create a branch: git checkout -b <branch_name>.
+Create a branch: `git checkout -b <branch_name>`.
 
-Make your changes and commit them: git commit -m '<commit_message>'
+Make your changes and commit them: `git commit -m '<commit_message>`'
 
-Push to the original branch: git push origin <project_name>/<location>
+Push to the original branch: `git push origin bp-sports-frontend/<location>`
         
 Create the pull request.
 
