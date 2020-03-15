@@ -12,7 +12,20 @@ There are no prerequisites, just got to https://bp-sports.netlify.com/ and you c
 
 ## Technologies Used 
 
-JavaScript, ReactJS, Redux, Ruby, Rails, React-Router, React Quill, JWT, BCrypt, Semantic UI React, Bootstrap, ESPN API, React Google Analytics, PostgresSQL
+* JavaScript
+* ReactJS
+* Redux
+* Ruby
+* Rails
+* React-Router
+* React Quill
+* JWT
+* BCrypt
+* Semantic UI React
+* Bootstrap
+* ESPN API
+* React Google Analytics
+* PostgresSQL
 
 This app is built with ReactJS for the front-end, and Ruby on Rails back-end. It utilizes Redux to store information in a central state. Styling is either Semantic-UI-React, Bootstrap, or bare CSS. The app uses React Google Analytics to track article views, and time spent on each article. React-Router is used for routing. React Quill Text Editor is used for writing and editing the articles. I learned Redux while creating the app, so I created seperate files for each reducer, for simplicity's sake.
 
