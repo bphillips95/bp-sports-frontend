@@ -12,6 +12,8 @@ The backend can be found at https://github.com/bphillips95/bp-sports-backend
 
 There are no prerequisites, just got to https://bp-sports.netlify.com/ and you can run the app.
 
+### If the website is not run for a while the articles will take longer to load.
+
 ## Technologies Used 
 
 * JavaScript
