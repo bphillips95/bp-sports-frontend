@@ -4,7 +4,7 @@ export default class Standings extends Component {
     render() {
         return (
             <h2>
-                Coming Soon
+                Standings will be available when the MLB season starts
             </h2>
         )
     }
