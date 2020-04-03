@@ -98,9 +98,9 @@ class AppHeader extends Component {
            <a className="dropdown-item" href="/write">Write an article</a>
           </div>
          </li>
-         {/* <li class="nav-item">
+         <li class="nav-item">
         <NavLink to="/standings" className="nav-link" >Standings </NavLink>
-      </li> */}
+      </li>
       <li class="nav-item">
         <NavLink to="/store" className="nav-link" >Merch </NavLink>
       </li>
