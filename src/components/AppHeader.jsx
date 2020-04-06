@@ -16,58 +16,8 @@ class AppHeader extends Component {
         console.log(this.props.user)
     }
     render() {
-        // console.log(this.props.tags)
             return (   
-        //       <div>
-        //     <Menu style={{color:'red'}} tabular > <NavLink to="/">
-        //         <Menu.Item >
-        //         <Image  src={Logo} size='small' style={{"width": '100px', "height": "auto" }}
-        //          />
-        //         </Menu.Item>
-        //         </NavLink>
-        //         <NavLink to="/register">
-        //          <Menu.Item  
-        //   name='sign_up'
-        // >Sign Up
-        //     </Menu.Item>
-        //     </NavLink> 
-        //   {!localStorage.token ? <NavLink to="/login">
-        //     <Menu.Item
-        //   name='login'
-        // > Log In
-        //   </Menu.Item>
-        //   </NavLink> :  <Button onClick={this.logout}>
-        //         Log Out
-        //         </Button> }  
-        //         <NavLink to="/patriots">
-        //          <Menu.Item  
-        //   name='patriots'
-        // >Patriots
-        //     </Menu.Item>
-        //     </NavLink> 
-        //     <NavLink to="/bruins">
-        //          <Menu.Item  
-        //   name='bruins'
-        // >Bruins
-        //     </Menu.Item>
-        //     </NavLink> 
-        //     <NavLink to="/redsox">
-        //          <Menu.Item  
-        //   name='redsox'
-        // >Red Sox
-        //     </Menu.Item>
-        //     </NavLink> 
-        //     <NavLink to="/celtics">
-        //          <Menu.Item  
-        //   name='celtics'
-        // >Celtics
-        //     </Menu.Item>
-        //     </NavLink> 
 
-        //   <Menu.Item>
-        //       {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or log in"}
-        //       {localStorage.token ? <NavLink to="/profile" >Profile </NavLink> : null }
-        //   </Menu.Item>
        <div>
          <ScoreBoard/>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -6,22 +6,7 @@ class ScoreBoard extends Component {
 
     handleRender = () => {
         let games = this.props.games.games
-        // This finds all the games currently in progress, push each game in progress into an array and all others into another one 
-        // and then map thru the proper ones displaying the current game data if its in action. 
-    //     games.map(game => {
-    //     if (game.status.type.name === "STATUS_IN_PROGRESS")  {
-    //         console.log("game in progress")
-    //         // console.log(game.competitions[0].competitors[0].score)
-    //         // console.log(game.competitions[0].competitors[1].score)
-    //     } if (game.status.type.name === "STATUS_FINAL") {
-    //     console.log(game.status.type.detail)
-    //     // console.log(game.competitions[0].competitors[0].score)
-    //     // console.log(game.competitions[0].competitors[1].score)
 
-    // }     else { 
-    //         console.log("didnt start yet")
-    //     }
-    // })
         return (
             <div style={{overflow:"auto"}}>
             <Menu tabular > 
@@ -30,7 +15,9 @@ class ScoreBoard extends Component {
                  <Menu.Item>
                      {/* if game statud didnt start yet ternary of time or null if game finished ternary of final or null if game !== didnt start yet- show score */}
         {game.shortName}<br/> 
+        {/* If game is final or in progress, show the score */}
                 {game.status.type.name === "STATUS_SCHEDULED" ? null : `${game.competitions[0].competitors[0].score} - ${game.competitions[0].competitors[1].score}`}
+                {/* If game is scheduled, then show the time, if final or in progress, say FINAL or LIVE */}
        <br/> {game.status.type.name !== "STATUS_SCHEDULED" ?  game.status.type.detail : `${game.date.slice(11,16)} UTC`}
             </Menu.Item>
             )}
@@ -41,8 +28,9 @@ class ScoreBoard extends Component {
     render() {
      return (
          <React.Fragment>
+             {/* Comment the function back in when scoreboard is live */}
          {/* {this.handleRender()} */}
-         <ul>The Scoreboard will be back when the MLB season starts</ul>
+         <ul>Sorry, the Scoreboard will be back when the MLB season starts</ul>
          </React.Fragment>
      )
     }}
