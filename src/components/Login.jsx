@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import { saveUserToState } from '../actions/action'
+import {saveUserToState} from '../actions/action'
 import {Grid,Header,Image,Form,Segment,Button,Message} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 import Logo from '../logo.jpeg'

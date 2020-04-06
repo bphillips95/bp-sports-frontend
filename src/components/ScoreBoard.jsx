@@ -28,7 +28,6 @@ class ScoreBoard extends Component {
     render() {
      return (
          <React.Fragment>
-             {/* Comment the function back in when scoreboard is live */}
          {/* {this.handleRender()} */}
          <ul>Sorry, the Scoreboard will be back when the MLB season starts</ul>
          </React.Fragment>
@@ -39,5 +38,6 @@ const getScores = state => {
         games: {...state.scores}
     }
 }
+//   Comment the function back in when scoreboard is live 
 
 export default connect(getScores)(ScoreBoard)

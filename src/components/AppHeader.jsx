@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Logo from '../logo.jpeg'
-import {Image, Menu, Button} from 'semantic-ui-react'
 import {NavLink } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {logoutUser} from '../actions/action'
@@ -17,7 +15,6 @@ class AppHeader extends Component {
     }
     render() {
             return (   
-
        <div>
          <ScoreBoard/>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
