@@ -53,7 +53,6 @@ class TextEditor extends Component {
 	handleSubmit = (evt) => {
 		if (this.state.content.length > 0 && this.state.title.length > 0) {
 		console.log(this.state)
-		// console.log(this.props.user.writer)
 		evt.preventDefault()
 		if(this.props.user.writer) {
 		fetch("https://bp-sports-backend.herokuapp.com/articles", {
@@ -87,15 +86,7 @@ class TextEditor extends Component {
 			tag_name: evt.target.name
 		})
 	}
-	// showTeamName = () => {
-	// 	this.props.tags.forEach(tag => {
-	// 		if(tag.id === this.state.tag_id ) { 
-	// 			console.log(tag.name)
-	// 		}
-	// 	})
-	// }
-	
-	
+
 	render() {
 		// console.log(this.props.tags)
 	    return (
@@ -150,7 +141,6 @@ class TextEditor extends Component {
 
   </div>
 </div> : null }
-				{/* Match the react state tag_id to redux state tag to show which tag was selected */}
 	 {this.state.tag_id ? `This article is about the ${this.state.tag_name}` : "Please tag your article"} 
 	      </div>
 	    );

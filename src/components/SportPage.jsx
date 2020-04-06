@@ -6,6 +6,7 @@ class SportPage extends Component {
 
     handleRender = () => {
         if(this.props.tags.tags) {
+            // Taking out the spaces and making team names lowerCase in order to match
             const sportsTag = this.props?.tags?.tags?.find(tag => tag.name.toLowerCase().replace(' ','') === this.props.match.params.tag)
             if(sportsTag) { 
             console.log(sportsTag)
@@ -41,12 +42,3 @@ const getTags = state => {
     }
 }
 export default connect(getTags)(SportPage)
-
-
-    // if(tag.name.includes(" ")){
-    //     return tag.name.toLowerCase().replace(" ","") === this.props.match.params.tag
-    // } else {
-    //     console.log(tag.name)
-    //     return tag.name.toLowerCase() === this.props.match.params.tag
-    // }
-    // console.log(tag.name)
