@@ -61,6 +61,7 @@ class AppHeader extends Component {
       {localStorage.token ? <NavLink to="/profile" className="nav-link" >Profile </NavLink> : null }
       </li>
          </ul>
+         {/* When adding search add articles to state and move search before Welcome */}
     {/* <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

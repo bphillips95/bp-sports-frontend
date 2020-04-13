@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BatLogo from '../shirt_with_bat.jpeg'
 import LogoShirt from '../shirt_with_logo.jpeg'
 import ShirtDesign1 from '../shirt_design_1.jpeg'
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
 
 export default class Store extends Component {
   

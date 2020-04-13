@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Header } from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import {Link, Redirect } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {deleteArticle} from '../actions/action'
 
 class Article extends Component {
