@@ -7,8 +7,8 @@ import {deleteArticle} from '../actions/action'
 class Article extends Component {
 
     handleDeleteClick = (evt) => {
-        // console.log(evt.target.value) // value is the article id
         let id = parseInt(evt.target.value)
+        // Skipped this and simply added a value to the target
         // console.log(id)
         // let articleToDelete = this.props.articles.articles.all.find(obj => obj.id == evt.target.value)
         // console.log(articleToDelete)
@@ -21,20 +21,13 @@ class Article extends Component {
              this.props.history.push('/'))
     }
     render() {
-        // find the if of line 8 in line 9 
+        // look through the articles and match the article id to the URL number
         // console.log(this.props.match.params.id)
         // console.log(this.props.articles.all)
         // forced equation bc params id is a string
         let foundArticle = this.props.articles?.articles?.all.find(obj => obj.id == this.props.match.params.id)
-    //    console.log(foundArticle)
-    //    if(foundArticle) { 
-    //     let tagName = foundArticle.article_tags.map(article_tag => article_tag.name)
-    //   console.log(tagName)
-    //    }
     
-    // if (foundArticle) {
-        // console.log(typeof(parseInt(localStorage.user_id)))
-        //    console.log(typeof(foundArticle.writer.writer_id))
+        // Using optional chaining, I removed if else statement
         return (
             <Container text>
             <Header as='h2'>  
@@ -51,12 +44,6 @@ class Article extends Component {
            : null }
             </Container>
         ) 
-    // }
-        // else { 
-        //     return <div>
-        //         Article Not Found
-        //     </div>
-        // }
        } 
     }
 const getArticle = state => {
@@ -64,6 +51,5 @@ const getArticle = state => {
         articles: {...state}
     }
 }
-// items: state.shoppingCart.itemIds.map(id => 
-//     state.products.itemsById[id]
+
 export default connect(getArticle, {deleteArticle})(Article)

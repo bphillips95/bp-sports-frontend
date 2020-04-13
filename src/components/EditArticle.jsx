@@ -65,7 +65,6 @@ class EditArticle extends Component {
     //  for refresh
     componentDidUpdate(prevProps){
         if(prevProps.articles.articles.all.length === 0){
-            // console.log(this.props.articles.articles)
             let foundArticle = this?.props?.articles?.articles.all.find(obj => obj.id == this.props.match.params.id)
             console.log(foundArticle)
             if(foundArticle) {
@@ -77,11 +76,9 @@ class EditArticle extends Component {
         }
         }
     }
-    handleEdit = (evt) => {
-        // console.log(this.state)
+    handleEdit = () => {
         let id = this.state.id
         // console.log(typeof(id)) is a number
-        // evt.preventDefault()
         // PATCH to only send some new info ie. title and content without changing writer
 		fetch(`https://bp-sports-backend.herokuapp.com/articles/${id}`, {
             method: "PATCH", 
@@ -100,7 +97,6 @@ class EditArticle extends Component {
             this.props.updateArticle(article)
             this.props.history.push(`/articles/${id}`)
         })
-
 	}
 
     handleRender = () => {
@@ -130,31 +126,6 @@ class EditArticle extends Component {
                 {this.handleRender()}
             </div>
         )
-        // let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
-        // console.log(foundArticle)
-        // if(foundArticle) {
-          
-	    // return (
-	//       <div >
-	// 		  <div>
-	// 		  <input name="title" type="text" 
-	// 		   onChange={this.titleChange} value={this.state.title}></input>
-	// 		  </div>
-	//         <ReactQuill theme="snow"  modules={this.modules}
-	// 			formats={this.formats} onChange={this.rteChange}
-	// 		value={this.state.content || ''} placeholder = 'Write Here' name="content"/> 
-	// 		<button onClick={this.handleSubmit} type="submit" >Submit</button>
-			
-	//       </div>
-    //     );
-    //     } 
-    //     else { 
-    //         return (
-    //         <div>Loading</div>
-    //         )
-    //     }
-	// }
-
     }
 }
 const getArticle = state => {
