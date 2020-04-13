@@ -48,6 +48,7 @@ class EditArticle extends Component {
 			title: evt.target.value
 		})
     }
+    // == instead of === bc coercing a string and integer
     // For click from article page
     componentDidMount(){
         // console.log(this.props)
@@ -65,13 +66,15 @@ class EditArticle extends Component {
     componentDidUpdate(prevProps){
         if(prevProps.articles.articles.all.length === 0){
             // console.log(this.props.articles.articles)
-            let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
+            let foundArticle = this?.props?.articles?.articles.all.find(obj => obj.id == this.props.match.params.id)
             console.log(foundArticle)
+            if(foundArticle) {
             this.setState({
                 title: foundArticle.title,
                 content: foundArticle.content,
                 id : foundArticle.id
             })
+        }
         }
     }
     handleEdit = (evt) => {

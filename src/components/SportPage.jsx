@@ -25,7 +25,6 @@ class SportPage extends Component {
                 return(
                     <h2>Please go to a valid page</h2>
                 )
-
             }
         }
     }
