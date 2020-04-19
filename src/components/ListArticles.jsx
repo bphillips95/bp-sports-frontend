@@ -13,7 +13,6 @@ export default class ListArticles extends Component {
 
       <Item.Content>
       <Link key={id} to={`/articles/${id}`} > <Item.Header>{title}</Item.Header></Link>
-       
         <Item.Meta>{writer.writer_name}</Item.Meta>
          <Item.Description>
         </Item.Description>{article_tags.length !== 0 ?

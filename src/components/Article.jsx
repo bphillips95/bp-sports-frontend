@@ -22,8 +22,6 @@ class Article extends Component {
     }
     render() {
         // look through the articles and match the article id to the URL number
-        // console.log(this.props.match.params.id)
-        // console.log(this.props.articles.all)
         // forced equation bc params id is a string
         let foundArticle = this.props.articles?.articles?.all.find(obj => obj.id == this.props.match.params.id)
     

@@ -51,7 +51,6 @@ class EditArticle extends Component {
     // == instead of === bc coercing a string and integer
     // For click from article page
     componentDidMount(){
-        // console.log(this.props)
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
         console.log(foundArticle)
         if (foundArticle) {  
@@ -101,7 +100,6 @@ class EditArticle extends Component {
 
     handleRender = () => {
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
-        // console.log(foundArticle)
         if(foundArticle) {
             return <div >
 			  <div>
@@ -112,10 +110,9 @@ class EditArticle extends Component {
 				formats={this.formats} onChange={this.rteChange} 
 			value={this.state.content || ''} placeholder = 'Write Here' name="content"/> 
 			<button onClick={this.handleEdit} type="submit" >Submit Edit</button>
-			
 	      </div>
         }
-        else{
+        else {
             return <div>Loading</div>
         }
     }

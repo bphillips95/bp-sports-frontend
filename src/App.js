@@ -53,7 +53,6 @@ class App extends Component {
       this.props.initializeScoreboard(resp.events)
       })
     }
-
 // dynamic articles routes must be first, tag and home last
   render() {
   return (
