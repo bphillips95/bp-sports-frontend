@@ -48,6 +48,7 @@ class EditArticle extends Component {
 			title: evt.target.value
 		})
     }
+    // switch to useEffect hook to include both DidMount and DidUpdate
     // == instead of === bc coercing a string and integer
     // For click from article page
     componentDidMount(){
