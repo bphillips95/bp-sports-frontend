@@ -1,9 +1,9 @@
-### Watch a Demo here https://youtu.be/80eo4SjyXbY 
-
 
 <img src= "src/logo.jpeg" width="200" height="170">
 
 #  BP SPORTS
+
+### Watch demo here https://youtu.be/80eo4SjyXbY 
 
 BP SPORTS is a baseball blogging website that allows users to write baseball articles.
 
