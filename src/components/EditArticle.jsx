@@ -51,7 +51,8 @@ class EditArticle extends Component {
     // switch to useEffect hook to include both DidMount and DidUpdate
     // == instead of === bc coercing a string and integer
     // For click from article page
-    componentDidMount(){
+
+     componentDidMount(){
         let foundArticle = this.props.articles.articles.all.find(obj => obj.id == this.props.match.params.id)
         console.log(foundArticle)
         if (foundArticle) {  
@@ -62,7 +63,7 @@ class EditArticle extends Component {
         })
         }
     }
-    //  for refresh
+    // //  for refresh
     componentDidUpdate(prevProps){
         if(prevProps.articles.articles.all.length === 0){
             let foundArticle = this?.props?.articles?.articles.all.find(obj => obj.id == this.props.match.params.id)

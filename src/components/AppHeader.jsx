@@ -55,7 +55,7 @@ class AppHeader extends Component {
       {this.props.user?.user?.writer? <NavLink to="/write" className="nav-link" >Write an Article </NavLink> : null }
       </li>
          <ul  class="form-inline my-2 my-lg-0" style={{"marginLeft": "55vw"}}>
-         {localStorage.token ? `Welcome ${localStorage.user}` : null}
+         {localStorage.token ? `Welcome ${localStorage.user}` : "Please Sign up or login to write an article"}
       </ul>
       <li class="nav-item">
       {localStorage.token ? <NavLink to="/profile" className="nav-link" >Profile </NavLink> : null }
