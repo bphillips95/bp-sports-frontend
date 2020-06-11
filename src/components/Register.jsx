@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import { Button, Form, Grid, Header, Image, Message, Segment, Checkbox } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 import Logo from '../logo.jpeg'
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 class Register extends Component {
 
     state = { 
@@ -27,8 +29,7 @@ class Register extends Component {
       })
     }
 
-    handleSubmit = (evt) => {
-        evt.preventDefault()
+    handleSubmit = () => {
         fetch("https://bp-sports-backend.herokuapp.com/api/v1/users",{
             method:"POST",
             headers:{
@@ -62,6 +63,22 @@ class Register extends Component {
         }
         })
         }
+
+        submit = () => {
+          confirmAlert({
+            title: 'Checked the box?',
+            message: "If you haven't checked to be a writer, please go back and check the box",
+            buttons: [
+              {
+                label: 'I am a writer',
+                onClick:  () => this.handleSubmit()
+              },
+              {
+                label: 'Go Back'
+              }
+            ]
+          });
+        };
     
     render() {
         return (
@@ -71,7 +88,7 @@ class Register extends Component {
                 <Image src={Logo} /> 
                 Sign up for an account
               </Header>
-              <Form size='large' onSubmit={this.handleSubmit}>
+              <Form size='large' onSubmit={this.submit}>
                 <Segment stacked>
                 <Form.Input fluid icon='user' iconPosition='left' name="first_name" placeholder="First Name"
                   onChange={this.handleChange} value={this.state.first_name} />
