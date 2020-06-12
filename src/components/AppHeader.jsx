@@ -54,13 +54,10 @@ class AppHeader extends Component {
       <li class="nav-item">
       {this.props.user?.user?.writer? <NavLink to="/write" className="nav-link" >Write an Article </NavLink> : null }
       </li>
-          
-        {/* //   class="form-inline my-2 my-lg-0" 
-        //  style={{"marginLeft": "55vw"}}> */}
          {localStorage.token ? 
          <ul className="form-inline my-2 my-lg-0" style={{"marginLeft": "55vw"}}>
             Welcome {localStorage.user} </ul>
-         : <ul > Please Sign up or login to write an article </ul>}
+         : <ul style={{'font-weight': 'bold'}} > Please Sign up or login to write an article </ul>}
       <li class="nav-item">
       {localStorage.token ? <NavLink to="/profile" className="nav-link" >Profile </NavLink> : null }
       </li>
