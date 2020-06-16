@@ -4,6 +4,10 @@ import {connect} from 'react-redux'
 import {logoutUser} from '../actions/action'
 import ScoreBoard from './ScoreBoard'
 class AppHeader extends Component {
+
+    state = {
+      searchBar: ''
+    }
    
     logout = () => {
         console.log(this.props.user)
@@ -64,7 +68,7 @@ class AppHeader extends Component {
          </ul>
          {/* When adding search add articles to state and move search before Welcome */}
     {/* <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+      <input onChange={(evt) => this.setState({searchBar: evt.target.value})} class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> */}
   </div>
