@@ -28,8 +28,8 @@ class ScoreBoard extends Component {
     render() {
      return (
          <React.Fragment>
-         {this.handleRender()}
-         {/* <ul>Sorry, the Scoreboard will be back when the MLB season starts</ul> */}
+         {/* {this.handleRender()} */}
+         <ul>The Scoreboard will be back July 23rd - Opening Day!</ul>
          </React.Fragment>
      )
     }}
