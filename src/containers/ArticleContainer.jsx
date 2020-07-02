@@ -10,6 +10,7 @@ class ArticleContainer extends Component {
             <div>
               <strong>Latest Headlines</strong>
                     {listArticles}
+                   {window.outerWidth > 500 ? 
                     <div  style={{
                 position: "absolute",
                 left: '70%',
@@ -21,10 +22,9 @@ class ArticleContainer extends Component {
                               options={{height: 600, width: 400}}
                               noFooter= 'true'
                               theme= 'light'
-                            //   onComplete={action}
                           />
 </div>
-</div>
+</div> : null}
             </div>
         )
       } else {
