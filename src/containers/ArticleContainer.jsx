@@ -9,24 +9,22 @@ class ArticleContainer extends Component {
         return (
             <div>
               <strong>Latest Headlines</strong>
-                    {listArticles}
-                   {window.outerWidth > 500 ? 
-                    <div  style={{
-                position: "absolute",
-                left: '70%',
-                top: '15%'}} className="centerContent" > 
-                      <div className="selfCenter standardWidth">
-                          <TwitterTimelineEmbed
-                              sourceType="profile"
-                              screenName="mlb"
-                              options={{height: 600, width: 400}}
-                              noFooter= 'true'
-                              theme= 'light'
-                          />
-</div>
-</div> : null}
-            </div>
-        )
+                {listArticles}
+                  
+                {window.outerWidth > 500 ? 
+                  <div  style={{position: "absolute",left: '70%',top: '15%'}} className="centerContent" > 
+                        <div className="selfCenter standardWidth">
+                            <TwitterTimelineEmbed
+                                sourceType="profile"
+                                screenName="mlb"
+                                options={{height: 600, width: 400}}
+                                noFooter= 'true'
+                                theme= 'light'
+                            />
+                          </div>
+                      </div> : null}
+              </div>
+              )
       } else {
          return(
          <div>Articles are loading</div>
