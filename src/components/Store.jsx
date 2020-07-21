@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BatLogo from '../shirt_with_bat.jpeg'
 import LogoShirt from '../shirt_with_logo.jpeg'
 import ShirtDesign1 from '../shirt_design_1.jpeg'
-// import StripeCheckout from 'react-stripe-checkout';
+import StripeCheckout from 'react-stripe-checkout';
 
 export default class Store extends Component {
   
@@ -38,14 +38,14 @@ export default class Store extends Component {
       <p class="card-text">This shirt has the classic BP Sports Logo </p>
     </div>
     <div class="card-footer">
-      <button onClick={this.handleBuy}>Buy</button>
-      {/* <StripeCheckout
+      {/* <button onClick={this.handleBuy}>Buy</button> */}
+      <StripeCheckout
         token={this.onToken}
         label="Pay with 💳"
         amount={2495}
         // bitcoin
         stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-      /> */}
+      />
     </div>
   </div>
   <div class="card">
@@ -55,13 +55,13 @@ export default class Store extends Component {
       <p class="card-text">Plain T-shirt with classic design</p>
     </div>
     <div class="card-footer">
-    <button onClick={this.handleBuy}>Buy</button>
-    {/* <StripeCheckout
+    {/* <button onClick={this.handleBuy}>Buy</button> */}
+    <StripeCheckout
         token={this.onToken}
         label="Pay with 💳"
         amount={2495}
         stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-      /> */}
+      />
     </div>
   </div>
   <div class="card bg-primary text-white text-center p-3">
@@ -81,13 +81,13 @@ export default class Store extends Component {
       <p class="card-text">Plain T-shirt with bat and ball design</p>
     </div>
     <div class="card-footer">
-    <button onClick={this.handleBuy}>Buy</button>
-    {/* <StripeCheckout
+    {/* <button onClick={this.handleBuy}>Buy</button> */}
+    <StripeCheckout
         token={this.onToken}
         label="Pay with 💳"
         amount={2495}
         stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-      /> */}
+      />
     </div>
   </div>
 </div>
