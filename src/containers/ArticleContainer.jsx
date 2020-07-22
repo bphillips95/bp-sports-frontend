@@ -12,7 +12,7 @@ class ArticleContainer extends Component {
                 {listArticles}
                   
                 {window.outerWidth > 500 ? 
-                  <div  style={{position: "absolute",left: '70%',top: '15%'}} className="centerContent" > 
+                  <div  style={{position: "absolute",left: '70%',top: '19%'}} className="centerContent" > 
                         <div className="selfCenter standardWidth">
                             <TwitterTimelineEmbed
                                 sourceType="profile"
