@@ -81,13 +81,13 @@ export default class Store extends Component {
       <p class="card-text">Plain T-shirt with bat and ball design</p>
     </div>
     <div class="card-footer">
-    {/* <button onClick={this.handleBuy}>Buy</button> */}
-    <StripeCheckout
+    <button onClick={this.handleBuy}>Buy</button>
+    {/* <StripeCheckout
         token={this.onToken}
         label="Pay with 💳"
         amount={2495}
         stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
-      />
+      /> */}
     </div>
   </div>
 </div>
