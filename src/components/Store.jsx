@@ -40,10 +40,12 @@ export default class Store extends Component {
     <div class="card-footer">
       {/* <button onClick={this.handleBuy}>Buy</button> */}
       <StripeCheckout
+        name="BP Sports Merch"
         token={this.onToken}
         label="Pay with 💳"
         amount={2495}
         // bitcoin
+        allowRememberMe="false"
         stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
       />
     </div>
@@ -60,6 +62,7 @@ export default class Store extends Component {
         token={this.onToken}
         label="Pay with 💳"
         amount={2495}
+        allowRememberMe="false"
         stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
       />
     </div>
@@ -86,6 +89,7 @@ export default class Store extends Component {
         token={this.onToken}
         label="Pay with 💳"
         amount={2495}
+        allowRememberMe="false"
         stripeKey={process.env.REACT_APP_STRIPE_API_KEY}
       />
     </div>
