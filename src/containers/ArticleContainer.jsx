@@ -8,7 +8,7 @@ class ArticleContainer extends Component {
        if(this.props.articles) {
         return (
             <div>
-              <strong>Latest Headlines</strong>
+              <strong>Headlines may take some time to load</strong>
                 {listArticles}
                   
                 {window.outerWidth > 500 ? 
