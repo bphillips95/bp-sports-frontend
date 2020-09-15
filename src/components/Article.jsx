@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ArticleContainer from '../containers/ArticleContainer'
 import { Container, Header, Button } from 'semantic-ui-react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
@@ -27,6 +28,9 @@ class Article extends Component {
     
         // Using optional chaining, I removed if else statement
         return (
+            <React.Fragment>
+            {/* seperate article list from component, only bring article list here, then keep on left side */}
+            {/* <ArticleContainer/> */}
             <Container text>
             <Header as='h2'>  
                 {foundArticle?.title} </Header>
@@ -42,6 +46,7 @@ class Article extends Component {
            : null }
            <Link to='/' className='ui button'>Home Page</Link>
             </Container>
+            </React.Fragment>
         ) 
        } 
     }
