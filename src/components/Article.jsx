@@ -30,9 +30,9 @@ class Article extends Component {
             <Container text>
             <Header as='h2'>  
                 {foundArticle?.title} </Header>
-                <h3>
+                <h6>
                    By {foundArticle?.writer?.writer_name}
-                </h3>
+                </h6>
             <div dangerouslySetInnerHTML={{__html: foundArticle?.content}}></div>
            <br></br>
            {/* Conditionally render Edit and delete if user id matches writer id */}
