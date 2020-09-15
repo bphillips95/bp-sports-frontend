@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Header } from 'semantic-ui-react'
+import { Container, Header, Button } from 'semantic-ui-react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {deleteArticle} from '../actions/action'
@@ -40,6 +40,7 @@ class Article extends Component {
            <Link to={`/articles/${foundArticle.id}/edit`}  >Edit Article </Link> 
             <button value={foundArticle.id} onClick={this.handleDeleteClick}>Delete Article</button> </div>
            : null }
+           <Link to='/' className='ui button'>Home Page</Link>
             </Container>
         ) 
        } 
