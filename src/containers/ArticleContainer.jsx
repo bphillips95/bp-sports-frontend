@@ -9,6 +9,9 @@ class ArticleContainer extends Component {
         return (
             <div>
               <strong>Headlines may take some time to load</strong>
+
+              {/* Place large article box design here
+               */}
                 {listArticles}
                   
                 {window.outerWidth > 500 ? 
