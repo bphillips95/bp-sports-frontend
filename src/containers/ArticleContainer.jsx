@@ -9,7 +9,7 @@ class ArticleContainer extends Component {
        if(this.props.articles) {
         return (
             <div>
-              <strong>Headlines may take some time to load</strong>
+              <strong>Headlines may take up to 30 seconds to load</strong>
 
               {/* <div class="card bg-dark text-white">
   <img class="card-img" src={SoxPic} alt="Card image" style={{padding-right: '50px'}}></img>

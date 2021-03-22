@@ -13,7 +13,7 @@ class ScoreBoard extends Component {
             Scoreboard will be updated at 11AM EST
             {games.map(game => 
                  <Menu.Item>
-                     {/* if game statud didnt start yet ternary of time or null if game finished ternary of final or null if game !== didnt start yet- show score */}
+                     {/* if game statud didnt start yet = ternary of time or null. if game finished = ternary of final or null. if game !== didnt start yet- show score */}
         {game.shortName}<br/> 
         {/* If game is final or in progress, show the score */}
                 {game.status.type.name === "STATUS_SCHEDULED" ? null : `${game.competitions[0].competitors[0].score} - ${game.competitions[0].competitors[1].score}`}
